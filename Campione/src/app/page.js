@@ -1,137 +1,220 @@
 export default function Home() {
   return (
-    <main>
-      {/* Banner Home Section */}
-      <div className="section-wrapper pb-0">
-        <div className="banner-home-container" id="banner-slideshow">
-          <div className="slideshow-container"></div>                  
-          <div className="hero-container">
-            <div className="banner-content-container">
-              
-              <div className="banner-home-top">
-                <div className="banner-home-title animate-box animate__animated animated" data-animate="animate__fadeInLeft">
-                  <div>
-                    <div className="sub-heading sub-heading-banner">
-                      <span className="sub-heading-title">Réservation de Terrains de Sports</span>
-                    </div>
-                  </div>
-                  <h1 className="secondary-accent">CAMPIONE APP</h1>
-                </div>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
 
-                <div className="banner-home-network animate-box animate__animated animated" data-animate="animate__fadeInRight">
-                  <div className="card card-banner-reviewer">
-                    <h4 className="secondary-accent">Débloquez Tout Votre Potentiel</h4>
-                    <div className="banner-reviewer-container">
-                      <img src="/adelux-assets/images/dummy-img-400x400.jpg" alt="Reviewer" className="banner-avatar" />
-                      <img src="/adelux-assets/images/dummy-img-400x400.jpg" alt="Reviewer" className="banner-avatar" />
-                      <img src="/adelux-assets/images/dummy-img-400x400.jpg" alt="Reviewer" className="banner-avatar" />
-                    </div>
-                    <span className="reviewer-card-description">Trouvez et réservez les meilleurs terrains autour de vous, instantanément.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="banner-home-bottom">
-                <div className="banner-home-community-container animate-box animate__animated animated" data-animate="animate__fadeInLeft">
-                  <div className="card banner-home-community">
-                    <div className="home-community-img">
-                      <img src="/adelux-assets/images/dummy-img-600x500.jpg" alt="Banner Home Community" />
-                    </div>
-                    <div className="home-community-content">
-                      <div className="d-flex flex-row align-items-center gspace-1">
-                        <h3 className="home-community-highlight">100+</h3>
-                      </div>
-                      <div className="d-flex flex-column">
-                        <h5 className="secondary-accent mb-0">Terrains Disponibles</h5>
-                        <p className="secondary-accent mb-0">Rejoignez la plus grande communauté de sportifs.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="banner-home-cta-container animate-box animate__animated animated-delay-slow" data-animate="animate__fadeInRight">
-                  <div className="banner-home-cta">
-                    <h3 className="secondary-accent">La Meilleure Application de Réservation</h3>
-                    <p className="secondary-accent">Campione vous permet de réserver facilement vos terrains de Padel, Foot5, Tennis et bien plus encore.</p>
-                    <div className="d-flex flex-row align-items-center gspace-2 gspace-xl-4">
-                      <div>
-                        <a href="/booking" className="btn btn-accent">
-                          <span className="btn-title">Télécharger l'App</span>
-                          <span className="icon-circle">
-                            <i className="fa-solid fa-arrow-right"></i>
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+        {/* Gt Hero Section Start */}
+        <section className="gt-hero-section gt-hero-3">
+            <div className="hero-circle-shape">
+                <img src="/booster-assets/img/home-3/hero-circle.png" alt="img" />
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Why Choose Us Section */}
-      <div className="section-wrapper py-0">
-        <div className="section section-chooseus">
-          <div className="hero-container">
-            <div className="d-flex flex-column flex-xl-row align-items-center gspace-100">
-              
-              <div className="chooseus-title-container">
-                <div className="d-flex flex-column gspace-2 animate-box animate__animated animated" data-animate="animate__fadeInLeft">
-                  <div>
-                    <div className="sub-heading">
-                      <i className="fa-solid fa-circle accent-color-2"></i>
-                      <span className="sub-heading-title">Pourquoi Nous Choisir</span>
-                    </div>
-                  </div>
-                  <h2>Pourquoi les joueurs choisissent Campione.</h2>
-                  <p className="mb-0">Découvrez ce qui fait de Campione la destination numéro un pour tous les passionnés de sport.</p>
+            <div className="container">
+                <div className="gt-hero-content">
+                    <h1 className="char-animation">
+                        La solution complète pour vos terrains
+                    </h1>
+                    <p className="wow fadeInUp" data-wow-delay=".3s">Réservez, organisez et jouez en toute simplicité avec Campione.</p>
+                    <form action="#" className="wow fadeInUp" data-wow-delay=".5s">
+                        <input type="text" placeholder="Entrez votre Email" />
+                        <button className="gt-theme-btn">
+                            Télécharger l'App
+                        </button>
+                    </form>
+                    <ul className="wow fadeInUp" data-wow-delay=".7s">
+                        <li>
+                            <i className="fa-regular fa-circle-check"></i>
+                            14 jours d'essai pour les clubs
+                        </li>
+                        <li>
+                            <i className="fa-regular fa-circle-check"></i>
+                            Sans engagement
+                        </li>
+                    </ul>
                 </div>
-              </div>
-
-              <div className="chooseus-card-container">
-                <div className="row row-cols-md-2 row-cols-1 grid-spacer-2">
-                  <div className="col">
-                    <div className="card card-chooseus animate-box animate__animated animated" data-animate="animate__fadeInRight">
-                      <div className="chooseus-icon">
-                        <img src="/adelux-assets/images/Icon-1.png" alt="Icon" className="img-fluid" />
-                      </div>
-                      <h4>Réservation 100% en ligne</h4>
+                <div className="gt-hero-image">
+                    <img src="/booster-assets/img/home-3/hero/hero-image.png" alt="img" />
+                    <div className="gt-hero-left">
+                        <img src="/booster-assets/img/home-3/hero/hero-left.png" alt="img" />
                     </div>
-                  </div>
-                  <div className="col">
-                    <div className="card card-chooseus bg-accent-color animate-box animate__animated animated-delay-slow" data-animate="animate__fadeInRight">
-                      <div className="chooseus-icon">
-                        <img src="/adelux-assets/images/Icon-2.png" alt="Icon" className="img-fluid" />
-                      </div>
-                      <h4 className="secondary-accent">Paiement partagé</h4>
+                    <div className="gt-hero-right">
+                        <img src="/booster-assets/img/home-3/hero/hero-right.png" alt="img" />
                     </div>
-                  </div>
-                  <div className="col">
-                    <div className="card card-chooseus animate-box animate__animated animated" data-animate="animate__fadeInRight">
-                      <div className="chooseus-icon">
-                        <img src="/adelux-assets/images/Icon-3.png" alt="Icon" className="img-fluid" />
-                      </div>
-                      <h4>Organisez vos matchs</h4>
-                    </div>
-                  </div>
-                  <div className="col">
-                    <div className="card card-chooseus animate-box animate__animated animated-delay-slow" data-animate="animate__fadeInRight">
-                      <div className="chooseus-icon">
-                        <img src="/adelux-assets/images/Icon-4.png" alt="Icon" className="img-fluid" />
-                      </div>
-                      <h4>Installations modernes</h4>
-                    </div>
-                  </div>
                 </div>
-              </div>
-
             </div>
-          </div>
+        </section>
+
+        {/* Gt Brand Section Start */}
+        <div className="gt-brand-section section-padding pb-0">
+            <div className="container">
+                <div className="gt-brand-wrapper">
+                    <h5 className="color-3 pt-0 char-animation">ILS NOUS FONT CONFIANCE</h5>
+                    <div className="swiper gt-brand-slider">
+                        <div className="swiper-wrapper">
+                            <div className="swiper-slide">
+                                <div className="gt-brand-image text-center hover-2">
+                                    <img src="/booster-assets/img/home-1/brand/brand-01.png" alt="img" />
+                                </div>
+                            </div>
+                            <div className="swiper-slide">
+                                <div className="gt-brand-image text-center hover-2">
+                                    <img src="/booster-assets/img/home-1/brand/brand-02.png" alt="img" />
+                                </div>
+                            </div>
+                            <div className="swiper-slide">
+                                <div className="gt-brand-image text-center hover-2">
+                                    <img src="/booster-assets/img/home-1/brand/brand-03.png" alt="img" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        {/* Gt About Section Start */}
+        <section className="gt-about-section fix section-padding pt-0 mt-20">
+            <div className="container">
+                <div className="gt-about-wrapper-3 section-padding pb-0">
+                    <div className="clicp-shape">
+                        <img src="/booster-assets/img/new-add/clip-path.png" alt="img" />
+                    </div>
+                    <div className="row g-4">
+                        <div className="col-xl-6">
+                            <div className="gt-about-content">
+                                <div className="gt-section-title style-3 mb-0">
+                                    <h6 className="tt-capitalize wow fadeInUp">Pourquoi Campione</h6>
+                                    <h2 className="char-animation">
+                                        Des expériences sportives inoubliables
+                                    </h2>
+                                </div>
+                                <p className="gt-text wow fadeInUp" data-wow-delay=".3s">
+                                    Campione centralise tout ce dont vous avez besoin pour profiter de votre passion sportive, sans les tracas de la réservation ou de l'organisation.
+                                </p>
+                                <ul className="gt-list-items wow fadeInUp" data-wow-delay=".5s">
+                                    <li>
+                                        <span className="gt-circle-box"></span>
+                                        <div className="gt-content">
+                                            <h4>Tout-en-Un</h4>
+                                            <span>
+                                                Trouvez le terrain idéal, invitez vos amis, et payez directement via l'application de manière sécurisée.
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span className="gt-circle-box"></span>
+                                        <div className="gt-content">
+                                            <h4>Temps réel</h4>
+                                            <span>
+                                               Visualisez les disponibilités instantanément. Fini les appels téléphoniques sans réponse !
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="col-xl-6">
+                            <div className="gt-about-image agn-choose-5-img">
+                                <div className="crm-imagewow wow fadeInRight" data-wow-delay=".3s">
+                                    <img src="/booster-assets/img/new-add/crm-img.png" alt="img" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Gt Feature Benefit Section Start */}
+        <section className="gt-feature-benefit-section section-padding pb-0 pt-0 mt-20">
+            <div className="container">
+                <div className="gt-section-title style-3 text-center">
+                    <h6 className="wow fadeInUp tt-capitalize">Principales fonctionnalités</h6>
+                    <h2 className="char-animation">
+                       Les avantages Campione
+                    </h2>
+                </div>
+                <div className="gt-feature-benefit-wrapper">
+                    <div className="row g-4">
+                        <div className="col-lg-6">
+                            <div className="gt-feature-benefit-items">
+                                <div className="bg-shape">
+                                    <img src="/booster-assets/img/new-add/bg-share.png" alt="img" />
+                                </div>
+                                <ul>
+                                    <li className="sticky-fixed-panel2">
+                                        <div className="gt-benefit-content">
+                                            <h3>Réservation en 3 clics</h3>
+                                            <p>
+                                                Choisissez le sport, la date et le lieu. Confirmez, et votre créneau vous est réservé automatiquement !
+                                            </p>
+                                            <span className="gt-number">01</span>
+                                        </div>
+                                    </li>
+                                    <li className="sticky-fixed-panel2">
+                                        <div className="gt-benefit-content">
+                                            <h3>Invitation des joueurs</h3>
+                                            <p>
+                                                Ajoutez vos contacts et l'application s'occupe de gérer les participants et les alertes.
+                                            </p>
+                                            <span className="gt-number">02</span>
+                                        </div>
+                                    </li>
+                                    <li className="sticky-fixed-panel2">
+                                        <div className="gt-benefit-content">
+                                            <h3>Paiement partagé</h3>
+                                            <p>
+                                                Ne payez que votre part : le système divise automatiquement le prix du créneau entre tous les participants.
+                                            </p>
+                                            <span className="gt-number">03</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="col-lg-6">
+                            <div className="gt-feature-box-image sticky-style">
+                                <div className="bg-shape">
+                                    <img src="/booster-assets/img/home-3/benefit-bg.png" alt="img" />
+                                </div>
+                                <div className="image-1 top_view_2 itop_view_2 item-hover">
+                                    <img src="/booster-assets/img/home-3/benefit-img-1.png" alt="img" />
+                                </div>
+                                <div className="image-2 wow fadeInUp top_view_2 item-hover">
+                                    <img src="/booster-assets/img/home-3/benefit-img-2.png" alt="img" />
+                                </div>
+                                <div className="image-3 top_view_2 top_view_2 item-hover">
+                                     <img src="/booster-assets/img/home-3/benefit-img-3.png" alt="img" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Gt Contact Management Section Start */}
+        <section className="gt-contact-management-section pb-0 fix section-padding bg-cover" style={{backgroundImage: "url('/booster-assets/img/home-3/contact-managenment-bg.jpg')", marginTop: '4rem'}}>
+            <div className="container">
+                <div className="gt-section-title style-3 text-center">
+                    <h6 className="wow fadeInUp tt-capitalize">Prêt à jouer ?</h6>
+                    <h2 className="char-animation">
+                     Rejoignez la communauté !
+                    </h2>
+                </div>
+                <div className="row justify-content-center">
+                    <div className="col-lg-11">
+                        <div className="gt-contact-managenment-image text-center mt-30 top_view_2 item-hover">
+                            <div className="shape-3">
+                                <img src="/booster-assets/img/new-add/shape3.png" alt="img" />
+                            </div>
+                            <img src="/booster-assets/img/home-3/customer-img.png" alt="img" className="w-100" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
       </div>
-    </main>
+    </div>
   );
 }

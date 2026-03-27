@@ -1,3 +1,6 @@
+import Script from 'next/script';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import './globals.css';
 
 export const metadata = {
@@ -7,39 +10,39 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
+    <html lang="en">
       <head>
-        <link rel="stylesheet" href="/adelux-assets/css/main.css" />
-        <link rel="stylesheet" href="/adelux-assets/css/responsive.css" />
+        {/* Boostly CSS Dependencies */}
+        <link rel="stylesheet" href="/booster-assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/booster-assets/css/all.min.css" />
+        <link rel="stylesheet" href="/booster-assets/css/animate.css" />
+        <link rel="stylesheet" href="/booster-assets/css/magnific-popup.css" />
+        <link rel="stylesheet" href="/booster-assets/css/meanmenu.css" />
+        <link rel="stylesheet" href="/booster-assets/css/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="/booster-assets/css/nice-select.css" />
+        <link rel="stylesheet" href="/booster-assets/css/flaticon.css" />
+        <link rel="stylesheet" href="/booster-assets/css/main.css" />
       </head>
-      <body>
-        <header>
-          <div className="container header-inner">
-            <div className="logo">
-              <a href="/">
-                <img src="/logos/logo%20campione%20plat%20light.png" alt="Campione Logo" style={{ height: '40px', width: 'auto' }} />
-              </a>
-            </div>
-            <nav>
-              <ul>
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/about">À propos</a></li>
-                <li><a href="/contact">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-        </header>
+      <body className="body-bg-2">
+        <Header />
 
-        <main>
-          {children}
-        </main>
+        {children}
 
-        <footer style={{ marginTop: '4rem', padding: '3rem 0', textAlign: 'center', backgroundColor: 'var(--foreground)', color: 'var(--background)' }}>
-          <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
-            <img src="/logos/logo%20campione%20dark%20carre.png" alt="Campione Logo Carre" style={{ height: '80px', width: 'auto' }} />
-            <p>&copy; {new Date().getFullYear()} Campione. Tous droits réservés.</p>
-          </div>
-        </footer>
+        <Footer />
+
+        {/* Boostly JS Dependencies */}
+        <Script src="/booster-assets/js/jquery-3.7.1.min.js" strategy="beforeInteractive" />
+        <Script src="/booster-assets/js/viewport.jquery.js" strategy="lazyOnload" />
+        <Script src="/booster-assets/js/bootstrap.bundle.min.js" strategy="lazyOnload" />
+        <Script src="/booster-assets/js/jquery.nice-select.min.js" strategy="lazyOnload" />
+        <Script src="/booster-assets/js/jquery.waypoints.js" strategy="lazyOnload" />
+        <Script src="/booster-assets/js/jquery.counterup.min.js" strategy="lazyOnload" />
+        <Script src="/booster-assets/js/swiper-bundle.min.js" strategy="lazyOnload" />
+        <Script src="/booster-assets/js/jquery.meanmenu.min.js" strategy="lazyOnload" />
+        <Script src="/booster-assets/js/parallaxie.js" strategy="lazyOnload" />
+        <Script src="/booster-assets/js/jquery.magnific-popup.min.js" strategy="lazyOnload" />
+        <Script src="/booster-assets/js/wow.min.js" strategy="lazyOnload" />
+        <Script src="/booster-assets/js/main.js" strategy="lazyOnload" />
       </body>
     </html>
   );
