@@ -1,93 +1,213 @@
+import Link from 'next/link';
+
 export const metadata = {
-  title: 'À propos | Campione',
-  description: 'En savoir plus sur l\'application Campione',
+  title: 'À Propos | Campione',
+  description: 'Découvrez qui nous sommes.',
 };
 
 export default function About() {
   return (
-    <main className="pb-24 bg-gray-50/30">
-      <div className="section-wrapper pb-0 relative">
-        <div className="section-banner-inner banner-inner-about bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 text-white rounded-b-[3rem] shadow-2xl relative overflow-hidden" style={{ padding: '8rem 0' }}>
-          {/* Subtle overlay pattern/shapes */}
-          <div className="absolute inset-0 bg-[url('/booster-assets/img/new-add/footer-dot.png')] opacity-20"></div>
-          <div className="container relative z-10">
-            <div className="d-flex flex-column gspace-2 text-center justify-content-center">
-              <h1 className="secondary-accent text-white text-5xl md:text-6xl font-extrabold tracking-tight mb-4 drop-shadow-lg">À Propos</h1>
-              <span className="breadcrumb-item text-blue-100 text-lg md:text-xl font-medium tracking-wide">Découvrez notre histoire</span>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+
+        {/* Gt Breadcrumb Section Start */}
+        <div className="gt-breadcrumb-wrapper bg-cover" style={{backgroundImage: "url('/booster-assets/img/breadcrumb-bg.jpg')"}}>
+            <div className="container">
+                <div className="gt-page-heading">
+                    <div className="gt-breadcrumb-sub-title">
+                        <h1 className="wow fadeInUp" data-wow-delay=".3s">À Propos de <span>Nous</span></h1>
+                    </div>
+                    <ul className="gt-breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                        <li>
+                            <Link href="/">
+                                Accueil
+                            </Link>
+                        </li>
+                        <li>
+                            <i className="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li>
+                         À Propos
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
 
-      <div className="section" style={{ padding: '6rem 0' }}>
-        <div className="container">
-          <div className="d-flex flex-column gspace-5 overflow-hidden">
-            <div className="welcome-about-wrapper max-w-4xl mx-auto">
-              <div className="d-flex flex-column gspace-2 text-center align-items-center mb-16">
-                <div>
-                  <div className="sub-heading mb-4">
-                    <span className="sub-heading-title text-blue-600 font-bold uppercase tracking-widest text-sm bg-blue-50 px-4 py-2 rounded-full">Bienvenue sur Campione</span>
-                  </div>
+         {/* Gt Brand Section Start */}
+        <div className="gt-brand-section section-padding pb-0">
+            <div className="container">
+                <div className="gt-brand-wrapper">
+                    <h5 className="color-3 pt-0 char-animation">ILS NOUS FONT CONFIANCE</h5>
+                    <div className="swiper gt-brand-slider">
+                        <div className="swiper-wrapper">
+                            <div className="swiper-slide">
+                                <div className="gt-brand-image text-center hover-2">
+                                    <img src="/booster-assets/img/home-1/brand/brand-01.png" alt="img" />
+                                </div>
+                            </div>
+                            <div className="swiper-slide">
+                                <div className="gt-brand-image text-center hover-2">
+                                    <img src="/booster-assets/img/home-1/brand/brand-02.png" alt="img" />
+                                </div>
+                            </div>
+                            <div className="swiper-slide">
+                                <div className="gt-brand-image text-center hover-2">
+                                    <img src="/booster-assets/img/home-1/brand/brand-03.png" alt="img" />
+                                </div>
+                            </div>
+                            <div className="swiper-slide">
+                                <div className="gt-brand-image text-center hover-2">
+                                    <img src="/booster-assets/img/home-1/brand/brand-04.png" alt="img" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">Où la passion rencontre <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">le terrain</span></h2>
-              </div>
-              <div className="d-flex flex-column justify-content-end h-100 text-center mb-16">
-                <p className="text-xl text-gray-600 leading-relaxed font-light">
-                  Campione est bien plus qu'une simple application de réservation. Nous sommes une communauté grandissante de passionnés de sport, dédiée à faciliter l'accès aux meilleures infrastructures. Que vous soyez débutant ou professionnel, Campione est votre partenaire sportif de choix.
-                </p>
-              </div>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-              <div className="col">
-                <div className="card card-about-misson bg-white p-10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-300 border border-gray-100 h-full text-center group cursor-default">
-                  <div className="w-16 h-16 mx-auto bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-600 transition-all duration-300">
-                    <i className="fa-solid fa-map-location-dot text-2xl text-blue-600 group-hover:text-white transition-colors"></i>
-                  </div>
-                  <div className="card-content">
-                    <h4 className="text-2xl font-bold text-gray-900 mb-4">Terrains d'Exception</h4>
-                    <p className="text-gray-600 leading-relaxed">Accès à des infrastructures professionnelles pour vos matchs et entraînements.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="card card-about-misson bg-white p-10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-300 border border-gray-100 h-full text-center group cursor-default">
-                  <div className="w-16 h-16 mx-auto bg-indigo-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-indigo-600 transition-all duration-300">
-                    <i className="fa-solid fa-user-tie text-2xl text-indigo-600 group-hover:text-white transition-colors"></i>
-                  </div>
-                  <div className="card-content">
-                    <h4 className="text-2xl font-bold text-gray-900 mb-4">Programmes de Coaching</h4>
-                    <p className="text-gray-600 leading-relaxed">Trouvez des coachs pour améliorer votre niveau, du débutant à l'expert.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="card card-about-misson bg-white p-10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-300 border border-gray-100 h-full text-center group cursor-default">
-                  <div className="w-16 h-16 mx-auto bg-green-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-green-600 transition-all duration-300">
-                    <i className="fa-solid fa-users text-2xl text-green-600 group-hover:text-white transition-colors"></i>
-                  </div>
-                  <div className="card-content">
-                    <h4 className="text-2xl font-bold text-gray-900 mb-4">Communauté & Tournois</h4>
-                    <p className="text-gray-600 leading-relaxed">Participez à des événements réguliers et gardez l'esprit de compétition.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="card card-about-misson bg-gradient-to-br from-blue-600 to-indigo-700 p-10 rounded-3xl shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 h-full text-center group">
-                  <div className="w-16 h-16 mx-auto bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
-                    <i className="fa-solid fa-star text-2xl text-white"></i>
-                  </div>
-                  <div className="card-content">
-                    <h4 className="text-2xl font-bold text-white mb-4">Avantages Exclusifs</h4>
-                    <p className="text-blue-100 leading-relaxed">Accès prioritaire, réductions et bien plus encore directement depuis l'application.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
         </div>
+
+        {/* Gt About Section Start */}
+        <section className="gt-about-section fix section-padding pt-0 mt-5">
+            <div className="container">
+                <div className="gt-about-wrapper-3 section-padding pb-0">
+                    <div className="clicp-shape">
+                        <img src="/booster-assets/img/new-add/clip-path.png" alt="img" />
+                    </div>
+                    <div className="row g-4">
+                        <div className="col-xl-6">
+                            <div className="gt-about-content">
+                                <div className="gt-section-title style-3 mb-0">
+                                    <h6 className="tt-capitalize wow fadeInUp">Notre Mission</h6>
+                                    <h2 className="char-animation">
+                                        Offrir des expériences inoubliables
+                                    </h2>
+                                </div>
+                                <p className="gt-text wow fadeInUp" data-wow-delay=".3s">
+                                    Campione centralise tout ce dont vous avez besoin pour profiter de votre passion sportive, sans les tracas de la réservation ou de l'organisation. Participez à des parties, gérez vos équipes, et bien plus encore.
+                                </p>
+                                <ul className="gt-list-items wow fadeInUp" data-wow-delay=".5s">
+                                    <li>
+                                        <span className="gt-circle-box"></span>
+                                        <div className="gt-content">
+                                            <h4>Plateforme Tout-en-Un</h4>
+                                            <span>
+                                                Trouvez le terrain idéal, invitez vos amis, et payez directement via l'application de manière sécurisée.
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span className="gt-circle-box"></span>
+                                        <div className="gt-content">
+                                            <h4>Abordable</h4>
+                                            <span>
+                                               Profitez d'un abonnement adapté pour les clubs et une application 100% gratuite pour les joueurs.
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="col-xl-6">
+                            <div className="gt-about-image agn-choose-5-img">
+                                <div className="crm-imagewow wow fadeInRight" data-wow-delay=".3s">
+                                    <img src="/booster-assets/img/new-add/crm-img.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         {/* Gt Feature Section Start */}
+        <section className="gt-feature-section-3 fix section-padding pt-0 mt-5">
+            <div className="gt-feature-focus-wrapper section-padding">
+                <div className="container">
+                    <div className="row g-4">
+                        <div className="col-lg-6">
+                            <div className="gt-feature-image">
+                                <img src="/booster-assets/img/home-3/feature-focus.png" alt="img" className="appear_left" />
+                                <div className="bg-shape">
+                                    <img src="/booster-assets/img/home-3/focus-bg.png" alt="img" />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-6">
+                            <div className="gt-feature-content">
+                                <div className="gt-section-title style-3 mb-0">
+                                    <h6 className="text-white tt-capitalize wow fadeInUp">Automatisation intelligente</h6>
+                                    <h2 className="text-white char-animation">
+                                        Automatisez les réservations, concentrez-vous sur le sport
+                                    </h2>
+                                </div>
+                                <div className="gt-counter-items">
+                                    <div className="gt-counter wow fadeInUp" data-wow-delay=".3s">
+                                        <h2>
+                                           <span className="gt-count">92</span> %
+                                        </h2>
+                                        <p>Amélioration de la satisfaction client</p>
+                                    </div>
+                                    <div className="gt-counter wow fadeInUp" data-wow-delay=".5s">
+                                        <h2>
+                                           <span className="gt-count">48</span> %
+                                        </h2>
+                                        <p>Réduction des coûts opérationnels</p>
+                                    </div>
+                                </div>
+                                <p className="text text-white wow fadeInUp" data-wow-delay=".7s">
+                                    Le temps c'est jouer. Grâce à notre algorithme optimisé, les terrains sont toujours alloués de la meilleure façon, maximisant l'occupation globale des clubs de sport partenaires.
+                                </p>
+                                <div className="gt-btn-all wow fadeInUp" data-wow-delay=".9s">
+                                    <Link href="/contact" className="gt-theme-btn style-3">Commencer</Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Gt Web App Section Start */}
+        <section className="gt-web-app-section fix section-padding section-bg-4">
+            <div className="container">
+                <div className="gt-web-app-wrapper">
+                    <div className="row g-4">
+                        <div className="col-lg-7">
+                            <div className="gt-web-app-content">
+                                <div className="gt-section-title style-3 mb-0">
+                                    <h6 className="wow fadeInUp tt-capitalize">Application Web et Mobile</h6>
+                                    <h2 className="char-animation">
+                                       Tout ce dont vous avez besoin au même endroit
+                                    </h2>
+                                </div>
+                                <p className="web-text wow fadeInUp" data-wow-delay=".3s">
+                                    Retrouvez dans votre poche ou sur votre ordinateur votre historique de matchs, votre réseau d'amis et le planning en temps réel.
+                                </p>
+                                <div className="gt-client-box-items top_view_2 item-hover">
+                                    <p>
+                                        Gardez tous vos contacts, matchs, et intéractions en un seul lieu. Ne cherchez plus l'information, elle vient à vous.
+                                    </p>
+                                    <div className="gt-info">
+                                        <img src="/booster-assets/img/home-3/client.png" alt="img" />
+                                        <span><b>Campione Equipe,</b> Développeurs</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-5">
+                            <div className="gt-web-app-image agn-choose-5-img">
+                                <div className="web-app wow fadeInRight" data-wow-delay=".3s">
+                                    <img src="/booster-assets/img/new-add/web-app.png" alt="img" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
       </div>
-    </main>
+    </div>
   );
 }

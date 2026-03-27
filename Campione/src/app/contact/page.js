@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const metadata = {
   title: 'Contact | Campione',
   description: 'Nous contacter',
@@ -5,93 +7,135 @@ export const metadata = {
 
 export default function Contact() {
   return (
-    <main className="pb-24 bg-gray-50/30">
-      <div className="section-wrapper pb-0">
-        <div className="section-banner-inner banner-inner-about bg-gray-900 text-white rounded-b-[3rem] shadow-2xl relative overflow-hidden" style={{ padding: '8rem 0' }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 opacity-90"></div>
-          <div className="container relative z-10">
-            <div className="d-flex flex-column gspace-2 text-center justify-content-center">
-              <h1 className="secondary-accent text-white text-5xl md:text-6xl font-extrabold tracking-tight mb-4 drop-shadow-md">Contactez-Nous</h1>
-              <span className="text-gray-300 text-lg md:text-xl font-medium tracking-wide">Une question ? Un partenariat ? Discutons-en.</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
 
-      <div className="section" style={{ padding: '6rem 0' }}>
-        <div className="container">
-          <div className="row row-cols-lg-2 row-cols-1 gap-y-16 items-center">
-            
-            <div className="col pr-0 lg:pr-16">
-              <div className="d-flex flex-column gspace-2">
-                <div className="mb-4">
-                  <span className="text-blue-600 font-bold uppercase tracking-widest text-sm bg-blue-50 px-4 py-2 rounded-full">Assistance</span>
+        {/* Gt Breadcrumb Section Start */}
+        <div className="gt-breadcrumb-wrapper bg-cover" style={{backgroundImage: "url('/booster-assets/img/breadcrumb-bg.jpg')"}}>
+            <div className="container">
+                <div className="gt-page-heading">
+                    <div className="gt-breadcrumb-sub-title">
+                        <h1 className="wow fadeInUp" data-wow-delay=".3s">Contactez-nous</h1>
+                    </div>
+                    <ul className="gt-breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                        <li>
+                            <Link href="/">
+                                Accueil
+                            </Link>
+                        </li>
+                        <li>
+                            <i className="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li>
+                            Contact
+                        </li>
+                    </ul>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-10">Nos Coordonnées</h2>
-                
-                <div className="flex flex-col gap-6">
-                    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-6 hover:shadow-md transition-shadow">
-                        <div className="contact-icon bg-blue-50 text-blue-600 w-16 h-16 flex items-center justify-center rounded-2xl flex-shrink-0">
-                            <i className="fa-solid fa-phone-volume text-2xl"></i>
-                        </div>
-                        <div>
-                            <h6 className="text-gray-500 font-medium text-sm mb-1 uppercase tracking-wide">Téléphone</h6>
-                            <h5 className="text-xl font-bold text-gray-900 m-0">+33 1 23 45 67 89</h5>
-                        </div>
-                    </div>
-                    
-                    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-6 hover:shadow-md transition-shadow">
-                        <div className="contact-icon bg-indigo-50 text-indigo-600 w-16 h-16 flex items-center justify-center rounded-2xl flex-shrink-0">
-                            <i className="fa-solid fa-envelope text-2xl"></i>
-                        </div>
-                        <div>
-                            <h6 className="text-gray-500 font-medium text-sm mb-1 uppercase tracking-wide">Email</h6>
-                            <h5 className="text-xl font-bold text-gray-900 m-0">contact@campione.app</h5>
-                        </div>
-                    </div>
+            </div>
+        </div>
 
-                    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-6 hover:shadow-md transition-shadow">
-                        <div className="contact-icon bg-green-50 text-green-600 w-16 h-16 flex items-center justify-center rounded-2xl flex-shrink-0">
-                            <i className="fa-solid fa-location-dot text-2xl"></i>
+        {/* Contact Info Section Start */}
+        <section className="contact-info-section fix section-padding">
+            <div className="container">
+                <div className="row g-4">
+                    <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                        <div className="contact-info-items text-center active">
+                            <div className="icon">
+                               <i className="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div className="content">
+                                <h3>Nos Bureaux</h3>
+                                <p>
+                                    Paris, France <br /> (123 Rue de la République)
+                                </p>
+                            </div>
                         </div>
-                        <div>
-                            <h6 className="text-gray-500 font-medium text-sm mb-1 uppercase tracking-wide">Bureaux</h6>
-                            <h5 className="text-xl font-bold text-gray-900 m-0">Paris, France</h5>
+                    </div>
+                    <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                        <div className="contact-info-items text-center">
+                            <div className="icon">
+                               <i className="fa-solid fa-envelopes"></i>
+                            </div>
+                            <div className="content">
+                                <h3><Link href="mailto:contact@campione.app">contact@campione.app</Link></h3>
+                                <p>
+                                    Envoyez-nous un message <br />
+                                    à tout moment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                        <div className="contact-info-items text-center">
+                            <div className="icon">
+                               <i className="fa-solid fa-phone-volume"></i>
+                            </div>
+                            <div className="content">
+                                <h3>Hotline:<Link href="tel:+33123456789">+33 1 23 45 67 89</Link></h3>
+                                <p>
+                                    Appelez-nous pour toute <br />
+                                    assistance.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-              </div>
             </div>
+        </section>
 
-            <div className="col">
-              <div className="card bg-white p-10 md:p-14 rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-gray-100 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10"></div>
-                
-                <h3 className="text-3xl font-extrabold text-gray-900 mb-8">Envoyez-nous un message</h3>
-                
-                <form className="flex flex-col gap-6">
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-2 ml-1">Nom Complet</label>
-                    <input type="text" className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-transparent focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/20 outline-none transition-all duration-300 text-gray-900" placeholder="Jean Dupont" />
-                  </div>
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-2 ml-1">Email</label>
-                    <input type="email" className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-transparent focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/20 outline-none transition-all duration-300 text-gray-900" placeholder="jean@exemple.com" />
-                  </div>
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-2 ml-1">Message</label>
-                    <textarea rows="5" className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-transparent focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/20 outline-none transition-all duration-300 text-gray-900 resize-none" placeholder="Comment pouvons-nous vous aider ?..."></textarea>
-                  </div>
-                  <button type="button" className="mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg px-8 py-4 rounded-xl hover:from-blue-700 hover:to-indigo-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 w-full flex justify-center items-center gap-2">
-                    Envoyer le Message <i className="fa-solid fa-paper-plane text-sm"></i>
-                  </button>
-                </form>
-              </div>
+        {/* Contact Section Start */}
+        <section className="contact-section-33 fix section-padding pt-0">
+            <div className="container">
+                <div className="contact-wrapper-2">
+                    <div className="row g-4 align-items-center">
+                        <div className="col-lg-6">
+                            <div className="map-items">
+                                <div className="googpemap">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6678.7619084840835!2d144.9618311901502!3d-37.81450084255415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b4758afc1d%3A0x3119cc820fdfc62e!2sEnvato!5e0!3m2!1sen!2sbd!4v1641984054261!5m2!1sen!2sbd" style={{border:0}} allowFullScreen="" loading="lazy"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-6">
+                            <div className="contact-content">
+                                <h2 className="inner-font fw-700 text-header-color">Prêt à démarrer ?</h2>
+                                <p>
+                                    Une question sur nos services ? Un partenariat ? N'hésitez pas à nous envoyer un message via le formulaire ci-dessous.
+                                </p>
+                                <form action="#" id="contact-form" method="POST" className="contact-form-items">
+                                    <div className="row g-4">
+                                        <div className="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+                                            <div className="form-clt">
+                                                <span>Votre nom*</span>
+                                                <input type="text" name="name" id="name" placeholder="Votre nom" />
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+                                            <div className="form-clt">
+                                                <span>Votre Email*</span>
+                                                <input type="email" name="email" id="email" placeholder="Votre Email" />
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-12 wow fadeInUp" data-wow-delay=".7s">
+                                            <div className="form-clt">
+                                                <span>Votre Message*</span>
+                                                <textarea name="message" id="message" placeholder="Votre Message"></textarea>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-7 wow fadeInUp" data-wow-delay=".9s">
+                                            <button type="button" className="gt-theme-btn">
+                                                Envoyer le message 
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-          </div>
-        </div>
+        </section>
+
       </div>
-    </main>
+    </div>
   );
 }
