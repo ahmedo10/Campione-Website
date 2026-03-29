@@ -1,2 +1,12 @@
 /* Fichier globals.css vidé pour restaurer l'intégrité du thème Booster (Bootstrap + Main CSS) */
 /* Les directives Tailwind CSS ont été supprimées car elles provoquaient des conflits (Preflight) avec le design original du thème. */
+
+.header-logo img {
+  max-width: 160px;
+  height: auto;
+}
+
+.offcanvas__logo img {
+  max-width: 130px;
+  height: auto;
+}

@@ -32,17 +32,17 @@ export default function RootLayout({ children }) {
 
         {/* Boostly JS Dependencies */}
         <Script src="/booster-assets/js/jquery-3.7.1.min.js" strategy="beforeInteractive" />
-        <Script src="/booster-assets/js/viewport.jquery.js" strategy="lazyOnload" />
-        <Script src="/booster-assets/js/bootstrap.bundle.min.js" strategy="lazyOnload" />
-        <Script src="/booster-assets/js/jquery.nice-select.min.js" strategy="lazyOnload" />
-        <Script src="/booster-assets/js/jquery.waypoints.js" strategy="lazyOnload" />
-        <Script src="/booster-assets/js/jquery.counterup.min.js" strategy="lazyOnload" />
-        <Script src="/booster-assets/js/swiper-bundle.min.js" strategy="lazyOnload" />
-        <Script src="/booster-assets/js/jquery.meanmenu.min.js" strategy="lazyOnload" />
-        <Script src="/booster-assets/js/parallaxie.js" strategy="lazyOnload" />
-        <Script src="/booster-assets/js/jquery.magnific-popup.min.js" strategy="lazyOnload" />
-        <Script src="/booster-assets/js/wow.min.js" strategy="lazyOnload" />
-        <Script src="/booster-assets/js/main.js" strategy="lazyOnload" />
+        <Script src="/booster-assets/js/viewport.jquery.js" strategy="afterInteractive" />
+        <Script src="/booster-assets/js/bootstrap.bundle.min.js" strategy="afterInteractive" />
+        <Script src="/booster-assets/js/jquery.nice-select.min.js" strategy="afterInteractive" />
+        <Script src="/booster-assets/js/jquery.waypoints.js" strategy="afterInteractive" />
+        <Script src="/booster-assets/js/jquery.counterup.min.js" strategy="afterInteractive" />
+        <Script src="/booster-assets/js/swiper-bundle.min.js" strategy="afterInteractive" />
+        <Script src="/booster-assets/js/jquery.meanmenu.min.js" strategy="afterInteractive" />
+        <Script src="/booster-assets/js/parallaxie.js" strategy="afterInteractive" />
+        <Script src="/booster-assets/js/jquery.magnific-popup.min.js" strategy="afterInteractive" />
+        <Script src="/booster-assets/js/wow.min.js" strategy="afterInteractive" />
+        <Script src="/booster-assets/js/main.js" strategy="afterInteractive" />
       </body>
     </html>
   );
