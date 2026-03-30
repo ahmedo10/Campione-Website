@@ -1,134 +1,97 @@
 import Link from 'next/link';
 
+const cols = [
+  { title:'Produit',    links:[{l:'Fonctionnalités',h:'/#features'},{l:'Tarifs',h:'/pricing'},{l:'Télécharger',h:'/contact'},{l:'Démo',h:'/contact'}] },
+  { title:'Entreprise', links:[{l:'À propos',h:'/about'},{l:'Carrières',h:'/contact'},{l:'Blog',h:'/contact'},{l:'Contact',h:'/contact'}] },
+  { title:'Support',    links:[{l:'Centre d\'aide',h:'/faq'},{l:'FAQ',h:'/faq'},{l:'Tutoriels',h:'/contact'},{l:'Statut',h:'/contact'}] },
+  { title:'Légal',      links:[{l:'Confidentialité',h:'/contact'},{l:'CGU',h:'/contact'},{l:'Mentions légales',h:'/contact'}] },
+];
+
+const socials = [
+  {icon:'fab fa-facebook-f', href:'#'},
+  {icon:'fab fa-twitter',    href:'#'},
+  {icon:'fab fa-instagram',  href:'#'},
+  {icon:'fab fa-linkedin-in',href:'#'},
+];
+
 export default function Footer() {
   return (
-    <>
-      <section className="gt-footer-section-3 footer-3">
-          <div className="footer-dot">
-              <img src="/booster-assets/img/new-add/footer-dot.png" alt="img" />
+    <footer style={{background:'#080C1A',borderTop:'1px solid rgba(255,255,255,0.08)'}}>
+
+      {/* Main grid */}
+      <div className="container" style={{padding:'72px 24px 48px'}}>
+        <div style={{display:'grid',gridTemplateColumns:'1.6fr 1fr 1fr 1fr 1fr',gap:'48px'}}>
+
+          {/* Brand */}
+          <div>
+            <Link href="/">
+              <img src="/logos/logo campione dark plat.png" alt="Campione" style={{height:'38px',marginBottom:'20px'}} />
+            </Link>
+            <p style={{fontSize:'14px',color:'#8892A4',lineHeight:1.75,marginBottom:'24px',maxWidth:'260px'}}>
+              La plateforme N°1 de réservation de terrains de sport. Simple, rapide, sécurisé.
+            </p>
+            <div style={{display:'flex',gap:'10px'}}>
+              {socials.map((s,i) => (
+                <Link key={i} href={s.href} style={{width:'38px',height:'38px',borderRadius:'10px',background:'rgba(255,255,255,0.05)',border:'1px solid rgba(255,255,255,0.08)',display:'flex',alignItems:'center',justifyContent:'center',color:'#8892A4',fontSize:'14px',transition:'all 0.2s'}}>
+                  <i className={s.icon} />
+                </Link>
+              ))}
+            </div>
           </div>
-          <div className="gt-cta-section-3">
-              <div className="container">
-                  <div className="gt-cta-wrapper-3 bg-cover" style={{backgroundImage: "url('/booster-assets/img/home-3/cta-bg.jpg')"}}>
-                      <div className="gt-section-title style-3 mb-0">
-                          <h6 className="wow fadeInUp tt-capitalize">Rejoindre Campione</h6>
-                          <h2 className="char-animation">
-                              Toute la gestion de vos terrains de sports
-                          </h2>
-                      </div>
-                      <p className="wow fadeInUp" data-wow-delay=".3s">Démarrez votre essai de 14 jours gratuits.</p>
-                      <div className="gt-cta-btn wow fadeInUp" data-wow-delay=".5s">
-                          <Link href="/contact" className="gt-theme-btn style-3 bg-header">Voir notre Démo</Link>
-                          <Link href="/contact" className="gt-theme-btn style-3">Commencer l'Essai</Link>
-                      </div>
-                      <ul className="wow fadeInUp" data-wow-delay=".7s">
-                          <li>
-                              <i className="fa-regular fa-circle-check"></i>
-                              14 jours d'essai pour les clubs
-                          </li>
-                          <li>
-                              <i className="fa-regular fa-circle-check"></i>
-                              Sans engagement
-                          </li>
-                      </ul>
-                  </div>
-              </div>
+
+          {/* Link columns */}
+          {cols.map((col,i) => (
+            <div key={i}>
+              <p style={{fontSize:'12px',fontWeight:700,textTransform:'uppercase',letterSpacing:'0.1em',color:'#F0F2F8',marginBottom:'20px'}}>{col.title}</p>
+              <ul style={{display:'flex',flexDirection:'column',gap:'12px'}}>
+                {col.links.map((lk,j) => (
+                  <li key={j}>
+                    <Link href={lk.h} className="footer-link">
+                      {lk.l}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* App store badges */}
+      <div style={{borderTop:'1px solid rgba(255,255,255,0.08)',padding:'28px 24px'}}>
+        <div className="container" style={{display:'flex',alignItems:'center',justifyContent:'space-between',flexWrap:'wrap',gap:'20px'}}>
+          <p style={{fontSize:'13px',color:'#4A5568'}}>© 2026 Campione. Tous droits réservés.</p>
+
+          <div style={{display:'flex',gap:'12px'}}>
+            {[
+              {icon:'fab fa-apple',      store:'App Store',   sub:'Télécharger sur'},
+              {icon:'fab fa-google-play',store:'Google Play', sub:'Disponible sur'},
+            ].map((a,i) => (
+              <Link key={i} href="#" style={{display:'flex',alignItems:'center',gap:'10px',padding:'10px 18px',borderRadius:'12px',background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.08)',transition:'border-color 0.2s'}}>
+                <i className={a.icon} style={{fontSize:'22px',color:'#F0F2F8'}} />
+                <div>
+                  <p style={{fontSize:'10px',color:'#4A5568',lineHeight:1}}>{a.sub}</p>
+                  <p style={{fontSize:'14px',fontWeight:700,color:'#F0F2F8',lineHeight:1.4}}>{a.store}</p>
+                </div>
+              </Link>
+            ))}
           </div>
-          <div className="container">
-              <div className="gt-footer-widget-wrapper style-2 style-3">
-                  <div className="row justify-content-between">
-                      <div className="col-xxl-4 col-xl-6 col-lg-6 col-md-8 col-sm-12 wow fadeInUp" data-wow-delay=".2s">
-                          <div className="gt-footer-widget-items">
-                              <div className="gt-widget-head">
-                                  <h3>À propos de Campione</h3>
-                              </div>
-                              <div className="gt-footer-content">
-                                  <p>
-                                      Campione est la meilleure façon de réserver des terrains de sports en ligne rapidement et de manière sécurisée.
-                                  </p>
-                                  <div className="gt-social-icon d-flex align-items-center">
-                                      <Link href="#">
-                                          <img src="/booster-assets/img/home-3/play-store.png" alt="img" />
-                                      </Link>
-                                      <Link href="#">
-                                          <img src="/booster-assets/img/home-3/app-store.png" alt="img" />
-                                      </Link>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div className="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
-                          <div className="gt-footer-widget-items">
-                              <div className="gt-widget-head">
-                                  <h3>Notre Entreprise</h3>
-                              </div>
-                             <ul className="gt-list-area">
-                                  <li>
-                                      <Link href="/about">À Propos</Link>
-                                  </li>
-                                  <li>
-                                      <Link href="/contact">Carrières</Link>
-                                  </li>
-                                  <li>
-                                      <Link href="/contact">Contactez-nous</Link>
-                                  </li>
-                                  <li>
-                                      <Link href="/contact">Espace Club</Link>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-                      <div className="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
-                          <div className="gt-footer-widget-items">
-                              <div className="gt-widget-head">
-                                  <h3>Ressources</h3>
-                              </div>
-                              <ul className="gt-list-area">
-                                  <li>
-                                      <Link href="/#features">Fonctionnalités</Link>
-                                  </li>
-                                  <li>
-                                      <Link href="/#benefits">Avantages</Link>
-                                  </li>
-                                  <li>
-                                      <Link href="/pricing">Tarifs</Link>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-                       <div className="col-xxl-3 col-xl-6 col-lg-6 col-md-8 ps-xxl-5 wow fadeInUp" data-wow-delay=".8s">
-                          <div className="gt-footer-widget-items">
-                              <div className="gt-widget-head">
-                                  <h3>Support</h3>
-                              </div>
-                               <ul className="gt-list-area">
-                                  <li>
-                                      <Link href="/faq">Aide & FAQ</Link>
-                                  </li>
-                                  <li>
-                                      <Link href="/faq">FAQ</Link>
-                                  </li>
-                                  <li>
-                                      <Link href="/contact">Tutoriels</Link>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div className="gt-footer-bottom-3">
-                  <Link href="/" className="footer-logo">
-                      <img src="/logos/logo campione dark carre.png" alt="img" style={{maxHeight: '40px'}} />
-                  </Link>
-                  <p>Copyright 2026 Campione. Tous droits réservés.</p>
-                  <div className="gt-social-icon d-flex align-items-center style-home-3">
-                      <Link href="#"><i className="fab fa-facebook-f"></i></Link>
-                      <Link href="#"><i className="fab fa-twitter"></i></Link>
-                      <Link href="#"><i className="fab fa-instagram"></i></Link>
-                  </div>
-              </div>
+
+          <div style={{display:'flex',alignItems:'center',gap:'8px'}}>
+            <span style={{width:'8px',height:'8px',borderRadius:'50%',background:'#00E096',display:'inline-block'}} />
+            <span style={{fontSize:'13px',color:'#8892A4'}}>Tous les systèmes opérationnels</span>
           </div>
-      </section>
-    </>
+        </div>
+      </div>
+
+      <style>{`
+        @media(max-width:1024px){
+          footer .container>div:first-child{grid-template-columns:1fr 1fr 1fr !important;}
+        }
+        @media(max-width:640px){
+          footer .container>div:first-child{grid-template-columns:1fr 1fr !important;}
+        }
+      `}</style>
+    </footer>
   );
 }

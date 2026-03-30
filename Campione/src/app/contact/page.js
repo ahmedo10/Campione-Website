@@ -1,141 +1,115 @@
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Contact | Campione',
-  description: 'Nous contacter',
-};
+export const metadata = { title: 'Contact | Campione', description: "Contactez l'équipe Campione." };
+
+const subjects = [
+  'Demande d\'information générale',
+  'Inscription d\'un club',
+  'Support technique',
+  'Partenariat',
+  'Presse & médias',
+  'Autre',
+];
+
+const socials = [
+  { icon:'fa-brands fa-instagram', color:'#EC4899', label:'Instagram', href:'#' },
+  { icon:'fa-brands fa-facebook',  color:'#00D4FF', label:'Facebook',  href:'#' },
+  { icon:'fa-brands fa-linkedin',  color:'#0EA5E9', label:'LinkedIn',  href:'#' },
+  { icon:'fa-brands fa-x-twitter', color:'#F0F2F8', label:'Twitter/X', href:'#' },
+];
 
 export default function Contact() {
   return (
-    <div id="smooth-wrapper">
-      <div id="smooth-content">
-
-        {/* Gt Breadcrumb Section Start */}
-        <div className="gt-breadcrumb-wrapper bg-cover" style={{backgroundImage: "url('/booster-assets/img/breadcrumb-bg.jpg')"}}>
-            <div className="container">
-                <div className="gt-page-heading">
-                    <div className="gt-breadcrumb-sub-title">
-                        <h1 className="wow fadeInUp" data-wow-delay=".3s">Contactez-nous</h1>
-                    </div>
-                    <ul className="gt-breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-                        <li>
-                            <Link href="/">
-                                Accueil
-                            </Link>
-                        </li>
-                        <li>
-                            <i className="fa-solid fa-chevron-right"></i>
-                        </li>
-                        <li>
-                            Contact
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <>
+      <div style={{background:'#0E1428',paddingTop:'120px',paddingBottom:'60px',borderBottom:'1px solid rgba(255,255,255,0.08)'}}>
+        <div className="container">
+          <nav style={{display:'flex',alignItems:'center',gap:'8px',fontSize:'13px',color:'#4A5568',marginBottom:'24px'}}>
+            <Link href="/" style={{color:'#8892A4'}}>Accueil</Link>
+            <i className="fa-solid fa-chevron-right" style={{fontSize:'10px'}} />
+            <span style={{color:'#F0F2F8'}}>Contact</span>
+          </nav>
+          <h1 style={{fontSize:'clamp(2rem,5vw,3.5rem)',fontWeight:900,letterSpacing:'-0.03em',color:'#F0F2F8',marginBottom:'16px'}}>
+            Contactez-<span style={{background:'linear-gradient(135deg,#00D4FF,#FF3366)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}}>nous</span>
+          </h1>
+          <p style={{fontSize:'17px',color:'#8892A4'}}>Notre équipe répond en moins de 2h en semaine</p>
         </div>
-
-        {/* Contact Info Section Start */}
-        <section className="contact-info-section fix section-padding">
-            <div className="container">
-                <div className="row g-4">
-                    <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                        <div className="contact-info-items text-center active">
-                            <div className="icon">
-                               <i className="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div className="content">
-                                <h3>Nos Bureaux</h3>
-                                <p>
-                                    Paris, France <br /> (123 Rue de la République)
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-                        <div className="contact-info-items text-center">
-                            <div className="icon">
-                               <i className="fa-solid fa-envelopes"></i>
-                            </div>
-                            <div className="content">
-                                <h3><Link href="mailto:contact@campione.app">contact@campione.app</Link></h3>
-                                <p>
-                                    Envoyez-nous un message <br />
-                                    à tout moment.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                        <div className="contact-info-items text-center">
-                            <div className="icon">
-                               <i className="fa-solid fa-phone-volume"></i>
-                            </div>
-                            <div className="content">
-                                <h3>Hotline:<Link href="tel:+33123456789">+33 1 23 45 67 89</Link></h3>
-                                <p>
-                                    Appelez-nous pour toute <br />
-                                    assistance.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {/* Contact Section Start */}
-        <section className="contact-section-33 fix section-padding pt-0">
-            <div className="container">
-                <div className="contact-wrapper-2">
-                    <div className="row g-4 align-items-center">
-                        <div className="col-lg-6">
-                            <div className="map-items">
-                                <div className="googpemap">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6678.7619084840835!2d144.9618311901502!3d-37.81450084255415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b4758afc1d%3A0x3119cc820fdfc62e!2sEnvato!5e0!3m2!1sen!2sbd!4v1641984054261!5m2!1sen!2sbd" style={{border:0}} allowFullScreen="" loading="lazy"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="contact-content">
-                                <h2 className="inner-font fw-700 text-header-color">Prêt à démarrer ?</h2>
-                                <p>
-                                    Une question sur nos services ? Un partenariat ? N'hésitez pas à nous envoyer un message via le formulaire ci-dessous.
-                                </p>
-                                <form action="#" id="contact-form" method="POST" className="contact-form-items">
-                                    <div className="row g-4">
-                                        <div className="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
-                                            <div className="form-clt">
-                                                <span>Votre nom*</span>
-                                                <input type="text" name="name" id="name" placeholder="Votre nom" />
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
-                                            <div className="form-clt">
-                                                <span>Votre Email*</span>
-                                                <input type="email" name="email" id="email" placeholder="Votre Email" />
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-12 wow fadeInUp" data-wow-delay=".7s">
-                                            <div className="form-clt">
-                                                <span>Votre Message*</span>
-                                                <textarea name="message" id="message" placeholder="Votre Message"></textarea>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-7 wow fadeInUp" data-wow-delay=".9s">
-                                            <button type="button" className="gt-theme-btn">
-                                                Envoyer le message 
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
       </div>
-    </div>
+
+      <section className="section" style={{background:'#080C1A'}}>
+        <div className="container">
+          <div style={{display:'grid',gridTemplateColumns:'1fr 1.4fr',gap:'64px',alignItems:'start'}}>
+
+            {/* Info */}
+            <div>
+              {[
+                {icon:'fa-solid fa-location-dot', color:'#00D4FF', title:'Nos bureaux',  text:'Tunis, Tunisie'},
+                {icon:'fa-solid fa-envelope',      color:'#FF3366', title:'Email',        text:'contact@campione.app'},
+                {icon:'fa-solid fa-phone',         color:'#00E096', title:'Téléphone',    text:'+216 XX XXX XXX'},
+              ].map((item,i) => (
+                <div key={i} style={{display:'flex',gap:'16px',marginBottom:'32px'}}>
+                  <div style={{width:'48px',height:'48px',borderRadius:'14px',background:`${item.color}15`,border:`1px solid ${item.color}25`,display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
+                    <i className={item.icon} style={{color:item.color}} />
+                  </div>
+                  <div>
+                    <p style={{fontSize:'13px',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.08em',color:'#4A5568',marginBottom:'4px'}}>{item.title}</p>
+                    <p style={{fontSize:'16px',color:'#F0F2F8',fontWeight:500}}>{item.text}</p>
+                  </div>
+                </div>
+              ))}
+
+              {/* Map placeholder */}
+              <div style={{borderRadius:'16px',overflow:'hidden',border:'1px solid rgba(255,255,255,0.08)',marginBottom:'32px',position:'relative',height:'200px',background:'#0E1428',display:'flex',alignItems:'center',justifyContent:'center'}}>
+                {/* Grid pattern */}
+                <div style={{position:'absolute',inset:0,backgroundImage:'linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px)',backgroundSize:'32px 32px'}} />
+                <div style={{position:'relative',zIndex:1,display:'flex',flexDirection:'column',alignItems:'center',gap:'8px'}}>
+                  <div style={{width:'40px',height:'40px',borderRadius:'50%',background:'rgba(255,51,102,0.15)',border:'2px solid #FF3366',display:'flex',alignItems:'center',justifyContent:'center'}}>
+                    <i className="fa-solid fa-location-dot" style={{color:'#FF3366',fontSize:'18px'}} />
+                  </div>
+                  <span style={{fontSize:'12px',color:'#4A5568',fontWeight:600}}>Tunis, Tunisie</span>
+                </div>
+              </div>
+
+              {/* Social links */}
+              <div>
+                <p style={{fontSize:'13px',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.08em',color:'#4A5568',marginBottom:'16px'}}>Suivez-nous</p>
+                <div style={{display:'flex',gap:'10px',flexWrap:'wrap'}}>
+                  {socials.map((s,i)=>(
+                    <a key={i} href={s.href} style={{display:'flex',alignItems:'center',gap:'8px',padding:'10px 16px',borderRadius:'10px',background:'rgba(255,255,255,0.04)',border:`1px solid ${s.color}40`,color:s.color,fontSize:'13px',fontWeight:500}}>
+                      <i className={s.icon} style={{fontSize:'16px'}} />
+                      {s.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Form */}
+            <div className="card">
+              <h2 style={{fontSize:'22px',fontWeight:800,color:'#F0F2F8',marginBottom:'28px'}}>Envoyez-nous un message</h2>
+              <form style={{display:'flex',flexDirection:'column',gap:'16px'}}>
+                <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'16px'}}>
+                  {['Votre nom','Votre email'].map((ph,i) => (
+                    <input key={i} type={i===1?'email':'text'} placeholder={ph}
+                           style={{padding:'13px 16px',borderRadius:'12px',background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.1)',color:'#F0F2F8',fontSize:'14px',outline:'none',fontFamily:'inherit'}} />
+                  ))}
+                </div>
+                <select style={{padding:'13px 16px',borderRadius:'12px',background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.1)',color:'#8892A4',fontSize:'14px',outline:'none',fontFamily:'inherit',cursor:'pointer'}}>
+                  <option value="" style={{background:'#0E1428'}}>Choisir un sujet</option>
+                  {subjects.map((s,i)=>(
+                    <option key={i} value={s} style={{background:'#0E1428',color:'#F0F2F8'}}>{s}</option>
+                  ))}
+                </select>
+                <textarea placeholder="Votre message..." rows={5}
+                          style={{padding:'13px 16px',borderRadius:'12px',background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.1)',color:'#F0F2F8',fontSize:'14px',outline:'none',resize:'vertical',fontFamily:'inherit'}} />
+                <button type="button" className="btn-primary" style={{justifyContent:'center',padding:'14px'}}>
+                  <i className="fa-solid fa-paper-plane" />
+                  Envoyer le message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

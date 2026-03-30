@@ -2,33 +2,56 @@ import Link from 'next/link';
 
 export default function CTA() {
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-        <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl rounded-3xl sm:px-16">
-          <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Prêt à révolutionner vos parties ?
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300 font-light">
-            Rejoignez des milliers de sportifs et de clubs qui utilisent déjà Campione au quotidien. L'inscription est gratuite pour les joueurs.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Link
-              href="/contact"
-              className="rounded-full bg-white px-8 py-3.5 text-sm font-bold text-gray-900 shadow-sm hover:bg-gray-100 hover:scale-105 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-              Télécharger l'application
-            </Link>
-            <Link href="/contact" className="text-sm font-semibold leading-6 text-white hover:text-blue-300 transition-colors">
-              Espace Club <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-          
-          {/* Subtle background glow */}
-          <div className="absolute -top-24 -left-24 -z-10 transform-gpu blur-3xl" aria-hidden="true">
-            <div className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-blue-600 to-indigo-500 opacity-20" style={{clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"}}></div>
+    <section className="section" style={{background:'#0E1428'}}>
+      <div className="container">
+        <div style={{
+          position:'relative',
+          borderRadius:'28px',
+          padding:'80px 48px',
+          textAlign:'center',
+          overflow:'hidden',
+          background:'linear-gradient(135deg,rgba(0,212,255,0.1) 0%,rgba(255,51,102,0.08) 100%)',
+          border:'1px solid rgba(0,212,255,0.2)',
+        }}>
+          {/* Glow */}
+          <div style={{position:'absolute',top:'-60px',left:'50%',transform:'translateX(-50%)',width:'500px',height:'200px',borderRadius:'50%',background:'radial-gradient(ellipse,rgba(0,212,255,0.25),transparent 70%)',filter:'blur(40px)',pointerEvents:'none'}} />
+          {/* Grid */}
+          <div style={{position:'absolute',inset:0,backgroundImage:'radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px)',backgroundSize:'28px 28px',pointerEvents:'none'}} />
+
+          <div style={{position:'relative',zIndex:1}}>
+            <h2 style={{fontSize:'clamp(2rem,5vw,3.25rem)',fontWeight:900,letterSpacing:'-0.03em',lineHeight:1.1,color:'#F0F2F8',marginBottom:'20px'}}>
+              Prêt à jouer ?
+            </h2>
+            <p style={{fontSize:'18px',color:'#8892A4',maxWidth:'560px',margin:'0 auto 40px',lineHeight:1.7}}>
+              Rejoignez des milliers de sportifs et de clubs qui utilisent Campione chaque jour
+            </p>
+
+            <div style={{display:'flex',gap:'12px',justifyContent:'center',flexWrap:'wrap',marginBottom:'32px'}}>
+              <Link href="/contact" className="btn-primary" style={{fontSize:'16px',padding:'16px 36px'}}>
+                <i className="fa-solid fa-mobile-screen-button" />
+                Télécharger maintenant
+              </Link>
+              <Link href="/contact" className="btn-ghost" style={{fontSize:'16px',padding:'16px 36px'}}>
+                <i className="fa-solid fa-building" style={{color:'#00D4FF'}} />
+                Espace Club
+              </Link>
+            </div>
+
+            <div style={{display:'flex',alignItems:'center',justifyContent:'center',gap:'32px',flexWrap:'wrap'}}>
+              {[
+                {icon:'fa-solid fa-circle-check', color:'#00E096', text:'14 jours gratuits'},
+                {icon:'fa-solid fa-circle-check', color:'#00E096', text:'Sans carte bancaire'},
+                {icon:'fa-solid fa-circle-check', color:'#00E096', text:'Sans engagement'},
+              ].map((item,i) => (
+                <span key={i} style={{display:'flex',alignItems:'center',gap:'8px',fontSize:'14px',color:'#8892A4'}}>
+                  <i className={item.icon} style={{color:item.color}} />
+                  {item.text}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

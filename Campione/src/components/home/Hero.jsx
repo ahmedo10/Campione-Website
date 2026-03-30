@@ -1,150 +1,163 @@
 import Link from 'next/link';
 
+const partners = [
+  { initials: 'SC', name: 'Sport Club',    color: '#00D4FF' },
+  { initials: 'AS', name: 'AS Tunis',      color: '#FF3366' },
+  { initials: 'CT', name: 'Club Tennis',   color: '#00E096' },
+  { initials: 'FC', name: 'FC Sousse',     color: '#F59E0B' },
+];
+
 export default function Hero() {
   return (
-    <div className="relative isolate overflow-hidden bg-white pt-14">
-      {/* Gradient blobs */}
-      <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-        <div
-          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-blue-200 to-indigo-400 opacity-25 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-          style={{ clipPath: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)' }}
-        />
-      </div>
-      <div className="absolute right-0 top-1/2 -z-10 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-100 rounded-full blur-[120px] opacity-40" aria-hidden="true" />
+    <section style={{
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      background: 'linear-gradient(160deg, #080C1A 0%, #0E1428 60%, #080C1A 100%)',
+      position: 'relative',
+      overflow: 'hidden',
+      paddingTop: '72px',
+    }}>
+      <div style={{position:'absolute',top:'-10%',right:'-5%',width:'600px',height:'600px',borderRadius:'50%',background:'radial-gradient(circle, rgba(0,212,255,0.12) 0%, transparent 65%)',pointerEvents:'none'}} />
+      <div style={{position:'absolute',bottom:'-10%',left:'-5%',width:'500px',height:'500px',borderRadius:'50%',background:'radial-gradient(circle, rgba(255,51,102,0.08) 0%, transparent 65%)',pointerEvents:'none'}} />
+      <div style={{position:'absolute',inset:0,backgroundImage:'radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)',backgroundSize:'32px 32px',pointerEvents:'none'}} />
 
-      <div className="py-20 sm:py-28 lg:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="container" style={{position:'relative',zIndex:1,padding:'80px 24px'}}>
+        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'64px',alignItems:'center'}}>
 
-            {/* Left: Text content */}
-            <div>
-              {/* Badge annonce */}
-              <div className="mb-8 inline-flex">
-                <div className="relative rounded-full px-4 py-1.5 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 transition-all cursor-pointer bg-white/60 backdrop-blur-sm">
-                  <i className="fa-solid fa-bolt text-yellow-500 mr-1.5"></i>
-                  Nouveau : Gestion multi-terrains disponible.{' '}
-                  <Link href="/pricing" className="font-semibold text-blue-600">
-                    Voir les plans <span aria-hidden="true">&rarr;</span>
-                  </Link>
-                </div>
-              </div>
+          {/* Left */}
+          <div>
+            <div className="section-label" style={{background:'rgba(0,212,255,0.1)',border:'1px solid rgba(0,212,255,0.25)',color:'#00D4FF'}}>
+              <span style={{width:'6px',height:'6px',borderRadius:'50%',background:'#00D4FF',animation:'pulse 2s infinite'}} />
+              Plateforme N°1 en Tunisie
+            </div>
 
-              <h1 className="text-5xl font-extrabold tracking-tight text-gray-900 sm:text-6xl leading-tight">
-                Gérez vos terrains.{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                  Jouez sans limites.
-                </span>
-              </h1>
+            <h1 style={{fontSize:'clamp(2.5rem,5.5vw,4rem)',fontWeight:900,letterSpacing:'-0.03em',lineHeight:1.1,marginBottom:'24px',color:'#F0F2F8'}}>
+              Réservez vos{' '}
+              <span style={{background:'linear-gradient(135deg,#00D4FF,#FF3366)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}}>
+                terrains de sport
+              </span>
+              {' '}en un clic
+            </h1>
 
-              <p className="mt-6 text-lg leading-8 text-gray-600 font-light max-w-xl">
-                Campione connecte les complexes sportifs et les joueurs. Réservez, organisez et payez en quelques secondes — sur web et mobile.
-              </p>
+            <p style={{fontSize:'18px',color:'#8892A4',lineHeight:1.75,marginBottom:'40px',maxWidth:'500px'}}>
+              Campione connecte joueurs et complexes sportifs en Tunisie. Réservation instantanée, paiement sécurisé, gestion d&apos;équipe — sur mobile et web.
+            </p>
 
-              {/* CTA */}
-              <div className="mt-10 flex flex-col sm:flex-row items-start gap-4">
-                <div className="w-full sm:w-auto p-1.5 bg-white border border-gray-200 rounded-full shadow-sm hover:shadow-md transition-shadow flex items-center">
-                  <input
-                    type="email"
-                    placeholder="Votre email professionnel..."
-                    className="w-full sm:w-56 px-4 py-2 bg-transparent border-none outline-none text-gray-700 placeholder-gray-400 focus:ring-0 text-sm"
-                  />
-                  <button
-                    type="button"
-                    className="rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 transition-all flex-shrink-0"
-                  >
-                    Essai gratuit
-                  </button>
-                </div>
-                <Link
-                  href="/contact"
-                  className="text-sm font-semibold text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-2 py-3"
-                >
-                  <span className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
-                    <i className="fa-solid fa-play text-blue-600 text-xs ml-0.5"></i>
-                  </span>
-                  Voir la démo
-                </Link>
-              </div>
+            <div style={{display:'flex',gap:'12px',flexWrap:'wrap',marginBottom:'48px'}}>
+              <Link href="/contact" className="btn-primary">
+                <i className="fa-solid fa-mobile-screen-button" />
+                Télécharger l&apos;app
+              </Link>
+              <Link href="/contact" className="btn-ghost">
+                <i className="fa-solid fa-play" style={{color:'#00D4FF',fontSize:'12px'}} />
+                Voir la démo
+              </Link>
+            </div>
 
-              {/* Trust badges */}
-              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-500">
-                <span className="flex items-center gap-1.5">
-                  <i className="fa-regular fa-circle-check text-green-500"></i>
-                  14 jours d&apos;essai gratuit
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <i className="fa-regular fa-circle-check text-green-500"></i>
-                  Sans carte bancaire
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <i className="fa-regular fa-circle-check text-green-500"></i>
-                  Sans engagement
-                </span>
-              </div>
-
-              {/* Social proof */}
-              <div className="mt-10 flex items-center gap-4">
-                <div className="flex -space-x-2">
-                  {['KB', 'SM', 'YT', 'AR'].map((initials) => (
-                    <div key={initials} className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 border-2 border-white flex items-center justify-center text-white text-xs font-bold">
-                      {initials}
+            {/* Trust row */}
+            <div style={{display:'flex',alignItems:'center',gap:'24px',flexWrap:'wrap',marginBottom:'40px'}}>
+              <div style={{display:'flex',alignItems:'center',gap:'12px'}}>
+                <div style={{display:'flex'}}>
+                  {['#00D4FF','#FF3366','#00E096','#F59E0B'].map((c,i) => (
+                    <div key={i} style={{width:'34px',height:'34px',borderRadius:'50%',background:c,border:'2px solid #080C1A',marginLeft: i > 0 ? '-10px' : 0,display:'flex',alignItems:'center',justifyContent:'center'}}>
+                      <i className="fa-solid fa-user" style={{color:'#080C1A',fontSize:'12px'}} />
                     </div>
                   ))}
                 </div>
                 <div>
-                  <div className="flex gap-0.5 text-yellow-400 text-xs">
-                    {[1,2,3,4,5].map((s) => <i key={s} className="fa-solid fa-star"></i>)}
+                  <div style={{display:'flex',gap:'2px',marginBottom:'2px'}}>
+                    {[1,2,3,4,5].map(i => <i key={i} className="fa-solid fa-star" style={{color:'#F59E0B',fontSize:'11px'}} />)}
                   </div>
-                  <p className="text-xs text-gray-500 mt-0.5">+500 complexes nous font confiance</p>
+                  <p style={{fontSize:'12px',color:'#4A5568'}}><span style={{color:'#F0F2F8',fontWeight:600}}>25 000+</span> utilisateurs</p>
+                </div>
+              </div>
+              <div style={{width:'1px',height:'36px',background:'rgba(255,255,255,0.08)'}} />
+              <div style={{display:'flex',alignItems:'center',gap:'8px'}}>
+                <i className="fa-solid fa-shield-check" style={{color:'#00E096',fontSize:'18px'}} />
+                <div>
+                  <p style={{fontSize:'13px',fontWeight:600,color:'#F0F2F8'}}>Paiement sécurisé</p>
+                  <p style={{fontSize:'11px',color:'#4A5568'}}>Cryptage SSL 256-bit</p>
                 </div>
               </div>
             </div>
 
-            {/* Right: Hero image */}
-            <div className="relative">
-              {/* Floating card - top left */}
-              <div className="hidden lg:flex absolute -left-6 top-8 z-10 items-center gap-3 bg-white rounded-2xl shadow-xl border border-gray-100 px-4 py-3">
-                <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
-                  <i className="fa-solid fa-calendar-check text-green-600"></i>
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-gray-900">Nouvelle réservation</p>
-                  <p className="text-xs text-gray-500">Terrain 3 · 18h00 - 19h00</p>
-                </div>
-              </div>
-
-              {/* Floating card - bottom right */}
-              <div className="hidden lg:flex absolute -right-6 bottom-12 z-10 items-center gap-3 bg-white rounded-2xl shadow-xl border border-gray-100 px-4 py-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
-                  <i className="fa-solid fa-users text-blue-600"></i>
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-gray-900">+4 joueurs invités</p>
-                  <p className="text-xs text-gray-500">Paiement partagé activé</p>
-                </div>
-              </div>
-
-              {/* Revenue floating card */}
-              <div className="hidden lg:flex absolute -right-4 top-1/3 z-10 flex-col bg-white rounded-2xl shadow-xl border border-gray-100 px-4 py-3 gap-1">
-                <p className="text-xs text-gray-500">Revenus ce mois</p>
-                <p className="text-lg font-extrabold text-gray-900">+128 000 DA</p>
-                <p className="text-xs text-green-600 flex items-center gap-1">
-                  <i className="fa-solid fa-arrow-trend-up"></i> +23% vs mois dernier
-                </p>
-              </div>
-
-              <div className="-m-2 rounded-2xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-3xl lg:p-4">
-                <img
-                  src="/booster-assets/img/home-3/hero/hero-image.png"
-                  alt="Aperçu de l'application Campione"
-                  className="rounded-xl shadow-2xl ring-1 ring-gray-900/10 w-full"
-                />
+            {/* Partners strip */}
+            <div style={{borderTop:'1px solid rgba(255,255,255,0.08)',paddingTop:'28px'}}>
+              <p style={{fontSize:'12px',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.1em',color:'#4A5568',marginBottom:'16px'}}>Partenaires</p>
+              <div style={{display:'flex',gap:'12px',flexWrap:'wrap'}}>
+                {partners.map((p, i) => (
+                  <div key={i} style={{display:'flex',alignItems:'center',gap:'10px',padding:'8px 14px',borderRadius:'12px',background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.08)'}}>
+                    <div style={{width:'32px',height:'32px',borderRadius:'8px',background:`linear-gradient(135deg,${p.color},${p.color}80)`,display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:'11px',color:'#080C1A',flexShrink:0}}>
+                      {p.initials}
+                    </div>
+                    <span style={{fontSize:'13px',fontWeight:500,color:'#8892A4'}}>{p.name}</span>
+                  </div>
+                ))}
               </div>
             </div>
-
           </div>
+
+          {/* Right */}
+          <div style={{position:'relative'}}>
+            <div style={{position:'absolute',top:'10%',left:'-40px',zIndex:10,background:'rgba(14,20,40,0.95)',border:'1px solid rgba(0,212,255,0.2)',borderRadius:'16px',padding:'14px 18px',backdropFilter:'blur(12px)',boxShadow:'0 8px 32px rgba(0,0,0,0.4)',display:'flex',alignItems:'center',gap:'12px'}}>
+              <div style={{width:'40px',height:'40px',borderRadius:'12px',background:'rgba(0,212,255,0.15)',display:'flex',alignItems:'center',justifyContent:'center'}}>
+                <i className="fa-solid fa-calendar-check" style={{color:'#00D4FF'}} />
+              </div>
+              <div>
+                <p style={{fontSize:'11px',color:'#8892A4'}}>Nouvelle réservation</p>
+                <p style={{fontSize:'14px',fontWeight:700,color:'#F0F2F8'}}>Terrain 3 · 18h–19h</p>
+              </div>
+            </div>
+
+            <div style={{position:'absolute',bottom:'15%',right:'-40px',zIndex:10,background:'rgba(14,20,40,0.95)',border:'1px solid rgba(0,224,150,0.2)',borderRadius:'16px',padding:'14px 18px',backdropFilter:'blur(12px)',boxShadow:'0 8px 32px rgba(0,0,0,0.4)'}}>
+              <p style={{fontSize:'11px',color:'#8892A4',marginBottom:'4px'}}>Revenus ce mois</p>
+              <p style={{fontSize:'22px',fontWeight:900,color:'#F0F2F8',letterSpacing:'-0.02em'}}>12 800 DT</p>
+              <p style={{fontSize:'12px',color:'#00E096',display:'flex',alignItems:'center',gap:'4px',marginTop:'4px'}}>
+                <i className="fa-solid fa-arrow-trend-up" /> +23% ce mois
+              </p>
+            </div>
+
+            <div style={{borderRadius:'24px',padding:'3px',background:'linear-gradient(135deg,rgba(0,212,255,0.4),rgba(255,51,102,0.2))',boxShadow:'0 32px 80px rgba(0,0,0,0.6)'}}>
+              <div style={{borderRadius:'22px',overflow:'hidden',background:'#0E1428',minHeight:'420px',display:'flex',flexDirection:'column',padding:'24px',gap:'16px'}}>
+                {/* Mock dashboard */}
+                <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+                  <span style={{fontSize:'14px',fontWeight:700,color:'#F0F2F8'}}>Dashboard Campione</span>
+                  <span style={{fontSize:'11px',color:'#00E096',background:'rgba(0,224,150,0.1)',padding:'3px 10px',borderRadius:'100px'}}>En ligne</span>
+                </div>
+                <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'12px'}}>
+                  {[{l:'Réservations',v:'142',c:'#00D4FF'},{l:'Revenus',v:'8 400 DT',c:'#00E096'}].map((item,i)=>(
+                    <div key={i} style={{background:'rgba(255,255,255,0.04)',borderRadius:'12px',padding:'14px'}}>
+                      <p style={{fontSize:'11px',color:'#4A5568',marginBottom:'6px'}}>{item.l}</p>
+                      <p style={{fontSize:'18px',fontWeight:800,color:item.c}}>{item.v}</p>
+                    </div>
+                  ))}
+                </div>
+                {[80,55,90,40].map((w,i)=>(
+                  <div key={i} style={{display:'flex',alignItems:'center',gap:'10px'}}>
+                    <span style={{fontSize:'11px',color:'#4A5568',width:'60px'}}>Terrain {i+1}</span>
+                    <div style={{flex:1,height:'6px',borderRadius:'3px',background:'rgba(255,255,255,0.06)'}}>
+                      <div style={{width:`${w}%`,height:'100%',borderRadius:'3px',background:`linear-gradient(90deg,#00D4FF,#FF3366)`}} />
+                    </div>
+                    <span style={{fontSize:'11px',color:'#8892A4',width:'30px',textAlign:'right'}}>{w}%</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .hero-grid { grid-template-columns: 1fr !important; }
+        }
+        @keyframes pulse {
+          0%,100% { opacity:1; }
+          50% { opacity:0.4; }
+        }
+      `}</style>
+    </section>
   );
 }

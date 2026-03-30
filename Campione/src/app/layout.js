@@ -1,50 +1,23 @@
-import Script from 'next/script';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import './globals.css';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: 'Campione | Réservation de Terrains de Sports',
-  description: 'Application mobile de réservation de terrains de sports',
+  title: 'Campione — Réservation de terrains de sport',
+  description: 'La plateforme N°1 de réservation de terrains sportifs en Algérie. Réservez, invitez vos amis et payez en quelques secondes.',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
-        {/* Boostly CSS Dependencies */}
-        <link rel="stylesheet" href="/booster-assets/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="/booster-assets/css/all.min.css" />
-        <link rel="stylesheet" href="/booster-assets/css/animate.css" />
-        <link rel="stylesheet" href="/booster-assets/css/magnific-popup.css" />
-        <link rel="stylesheet" href="/booster-assets/css/meanmenu.css" />
-        <link rel="stylesheet" href="/booster-assets/css/swiper-bundle.min.css" />
-        <link rel="stylesheet" href="/booster-assets/css/nice-select.css" />
-        <link rel="stylesheet" href="/booster-assets/css/flaticon.css" />
-        <link rel="stylesheet" href="/booster-assets/css/tabler-icons.min.css" />
-        <link rel="stylesheet" href="/booster-assets/css/color.css" />
-        <link rel="stylesheet" href="/booster-assets/css/main.css" />
+        <link rel="icon" href="/logos/favicon.png" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
       </head>
-      <body className="body-bg-2">
-        <Header />
-
-        {children}
-
+      <body>
+        <Navbar />
+        <main>{children}</main>
         <Footer />
-
-        {/* Boostly JS Dependencies */}
-        <Script src="/booster-assets/js/jquery-3.7.1.min.js" strategy="beforeInteractive" />
-        <Script src="/booster-assets/js/viewport.jquery.js" strategy="afterInteractive" />
-        <Script src="/booster-assets/js/bootstrap.bundle.min.js" strategy="afterInteractive" />
-        <Script src="/booster-assets/js/jquery.nice-select.min.js" strategy="afterInteractive" />
-        <Script src="/booster-assets/js/jquery.waypoints.js" strategy="afterInteractive" />
-        <Script src="/booster-assets/js/jquery.counterup.min.js" strategy="afterInteractive" />
-        <Script src="/booster-assets/js/swiper-bundle.min.js" strategy="afterInteractive" />
-        <Script src="/booster-assets/js/jquery.meanmenu.min.js" strategy="afterInteractive" />
-        <Script src="/booster-assets/js/parallaxie.js" strategy="afterInteractive" />
-        <Script src="/booster-assets/js/jquery.magnific-popup.min.js" strategy="afterInteractive" />
-        <Script src="/booster-assets/js/wow.min.js" strategy="afterInteractive" />
-        <Script src="/booster-assets/js/main.js" strategy="afterInteractive" />
       </body>
     </html>
   );

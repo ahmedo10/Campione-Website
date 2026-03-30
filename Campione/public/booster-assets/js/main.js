@@ -653,18 +653,18 @@
    // Preloader
         function handlePreloader() {
         if (typeof jQuery !== "undefined" && $('.preloader').length) {
-            $('.preloader').delay(200).fadeOut(500);
+            $('.preloader').delay(100).fadeOut(300);
         } else {
             // Vanilla JS fallback (optional, for non-jQuery builds)
             const preloader = document.querySelector('.preloader');
             if (preloader) {
                 setTimeout(() => {
-                    preloader.style.transition = 'opacity 0.5s ease';
+                    preloader.style.transition = 'opacity 0.3s ease';
                     preloader.style.opacity = '0';
                     setTimeout(() => {
                         preloader.style.display = 'none';
-                    }, 500);
-                }, 200);
+                    }, 300);
+                }, 100);
             }
         }
     }

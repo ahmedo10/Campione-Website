@@ -1,75 +1,61 @@
-const testimonials = [
-  {
-    name: 'Karim Benali',
-    role: 'Gérant, Complex Sport Alger',
-    avatar: 'KB',
-    content:
-      "Depuis qu'on utilise Campione, notre taux d'occupation a augmenté de 40%. Les réservations en ligne ont complètement remplacé les appels téléphoniques. Un gain de temps énorme.",
-    rating: 5,
-  },
-  {
-    name: 'Sofia Mansouri',
-    role: 'Joueuse de padel, Casablanca',
-    avatar: 'SM',
-    content:
-      "Je réserve mes terrains en moins d'une minute. Le paiement partagé avec mes amis est une fonctionnalité que j'attendais depuis longtemps. Campione a changé ma façon de jouer.",
-    rating: 5,
-  },
-  {
-    name: 'Youssef Trabelsi',
-    role: 'Directeur, Tunis Sport Club',
-    avatar: 'YT',
-    content:
-      "Le tableau de bord club est très complet. On voit en temps réel les réservations, les revenus, et on peut gérer les créneaux facilement. Je recommande à tous les complexes.",
-    rating: 5,
-  },
+const ratingStats = [
+  { label:'4.9★ App Store',   icon:'fa-brands fa-apple',       color:'#F0F2F8' },
+  { label:'4.8★ Google Play', icon:'fa-brands fa-google-play', color:'#00E096' },
+  { label:'+1200 avis',       icon:'fa-solid fa-star',         color:'#F59E0B' },
+  { label:'+500 clubs',       icon:'fa-solid fa-building',     color:'#00D4FF' },
 ];
 
-function StarRating({ count }) {
-  return (
-    <div className="flex gap-0.5 text-yellow-400">
-      {Array.from({ length: count }).map((_, i) => (
-        <i key={i} className="fa-solid fa-star text-sm"></i>
-      ))}
-    </div>
-  );
-}
+const items = [
+  { initials:'KB', name:'Karim Belhaj',    role:'Gérant, Complex Sport Tunis',   color:'#00D4FF', text:"Depuis Campione, notre taux d'occupation a augmenté de 40%. Les réservations en ligne ont remplacé les appels. Un gain de temps énorme." },
+  { initials:'SM', name:'Sonia Mansouri',  role:'Joueuse de padel, Sfax',        color:'#FF3366', text:"Je réserve en 30 secondes. Le paiement partagé avec mes amis est génial. Campione a changé ma façon de jouer." },
+  { initials:'YT', name:'Youssef Trabelsi',role:'Coach, Sousse Football Academy',color:'#00E096', text:"Le tableau de bord est très complet. Réservations, revenus, stats en temps réel. Je recommande à tous les clubs." },
+];
 
 export default function Testimonials() {
   return (
-    <div className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center mb-16">
-          <h2 className="text-base font-semibold leading-7 text-blue-600 tracking-wide uppercase">Témoignages</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Ils nous font confiance
-          </p>
-          <p className="mt-4 text-lg text-gray-600 font-light">
-            Clubs et joueurs partagent leur expérience avec Campione.
-          </p>
+    <section className="section" style={{background:'#080C1A'}}>
+      <div className="container">
+        <div style={{textAlign:'center',marginBottom:'48px'}}>
+          <div className="section-label" style={{background:'rgba(0,224,150,0.1)',border:'1px solid rgba(0,224,150,0.25)',color:'#00E096',margin:'0 auto 20px'}}>
+            Témoignages
+          </div>
+          <h2 className="section-title" style={{margin:'0 auto 16px'}}>Ils nous font confiance</h2>
+          <p className="section-sub" style={{margin:'0 auto'}}>Découvrez ce que nos utilisateurs pensent de Campione</p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {testimonials.map((t) => (
-            <div
-              key={t.name}
-              className="flex flex-col bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300"
-            >
-              <StarRating count={t.rating} />
-              <p className="mt-4 text-gray-700 leading-relaxed flex-1">"{t.content}"</p>
-              <div className="mt-6 flex items-center gap-4">
-                <div className="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-                  {t.avatar}
+        {/* Scrolling stats bar */}
+        <div style={{display:'flex',justifyContent:'center',gap:'8px',flexWrap:'wrap',marginBottom:'56px'}}>
+          {ratingStats.map((r,i)=>(
+            <div key={i} style={{display:'flex',alignItems:'center',gap:'10px',padding:'12px 20px',borderRadius:'100px',background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.08)'}}>
+              <i className={r.icon} style={{color:r.color,fontSize:'16px'}} />
+              <span style={{fontSize:'14px',fontWeight:700,color:'#F0F2F8'}}>{r.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid-3">
+          {items.map((t, i) => (
+            <div key={i} className="card" style={{display:'flex',flexDirection:'column',gap:'0'}}>
+              <div style={{height:'3px',borderRadius:'2px',background:`linear-gradient(90deg,${t.color},transparent)`,marginBottom:'24px'}} />
+              <div style={{display:'flex',gap:'3px',marginBottom:'16px'}}>
+                {[1,2,3,4,5].map(j => <i key={j} className="fa-solid fa-star" style={{color:'#F59E0B',fontSize:'13px'}} />)}
+              </div>
+              <p style={{fontSize:'15px',color:'#8892A4',lineHeight:1.75,flex:1,marginBottom:'24px'}}>
+                &ldquo;{t.text}&rdquo;
+              </p>
+              <div style={{display:'flex',alignItems:'center',gap:'12px',paddingTop:'20px',borderTop:'1px solid rgba(255,255,255,0.08)'}}>
+                <div style={{width:'44px',height:'44px',borderRadius:'50%',background:`linear-gradient(135deg,${t.color},${t.color}80)`,display:'flex',alignItems:'center',justifyContent:'center',fontWeight:700,fontSize:'14px',color:'#080C1A',flexShrink:0}}>
+                  {t.initials}
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 text-sm">{t.name}</p>
-                  <p className="text-gray-500 text-xs">{t.role}</p>
+                  <p style={{fontSize:'14px',fontWeight:600,color:'#F0F2F8'}}>{t.name}</p>
+                  <p style={{fontSize:'12px',color:'#4A5568'}}>{t.role}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

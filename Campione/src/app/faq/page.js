@@ -1,32 +1,24 @@
-import Link from 'next/link';
 import FAQ from '@/components/home/FAQ';
 import CTA from '@/components/home/CTA';
 
-export const metadata = {
-  title: 'FAQ | Campione',
-  description: 'Réponses aux questions fréquentes sur Campione.',
-};
+export const metadata = { title: 'FAQ | Campione', description: 'Réponses aux questions fréquentes sur Campione.' };
 
 export default function FAQPage() {
   return (
     <>
-      <div className="gt-breadcrumb-wrapper bg-cover" style={{ backgroundImage: "url('/booster-assets/img/breadcrumb-bg.jpg')" }}>
+      <div style={{background:'#0E1428',paddingTop:'120px',paddingBottom:'60px',borderBottom:'1px solid rgba(255,255,255,0.08)'}}>
         <div className="container">
-          <div className="gt-page-heading">
-            <div className="gt-breadcrumb-sub-title">
-              <h1 className="wow fadeInUp" data-wow-delay=".3s">
-                Questions <span>Fréquentes</span>
-              </h1>
-            </div>
-            <ul className="gt-breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-              <li><Link href="/">Accueil</Link></li>
-              <li><i className="fa-solid fa-chevron-right"></i></li>
-              <li>FAQ</li>
-            </ul>
-          </div>
+          <p style={{fontSize:'13px',fontWeight:700,textTransform:'uppercase',letterSpacing:'0.1em',color:'#F472B6',marginBottom:'12px'}}>FAQ</p>
+          <h1 style={{fontSize:'clamp(2rem,5vw,3.5rem)',fontWeight:900,letterSpacing:'-0.03em',color:'#F0F2F8',marginBottom:'16px'}}>
+            Questions <span style={{background:'linear-gradient(135deg,#00D4FF,#FF3366)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}}>fréquentes</span>
+          </h1>
+          <nav style={{display:'flex',alignItems:'center',gap:'8px',fontSize:'14px',color:'#4A5568'}}>
+            <a href="/" style={{color:'#8892A4'}}>Accueil</a>
+            <i className="fa-solid fa-chevron-right" style={{fontSize:'10px'}} />
+            <span style={{color:'#F0F2F8'}}>FAQ</span>
+          </nav>
         </div>
       </div>
-
       <FAQ />
       <CTA />
     </>
