@@ -21,6 +21,8 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="/booster-assets/css/swiper-bundle.min.css" />
         <link rel="stylesheet" href="/booster-assets/css/nice-select.css" />
         <link rel="stylesheet" href="/booster-assets/css/flaticon.css" />
+        <link rel="stylesheet" href="/booster-assets/css/tabler-icons.min.css" />
+        <link rel="stylesheet" href="/booster-assets/css/color.css" />
         <link rel="stylesheet" href="/booster-assets/css/main.css" />
       </head>
       <body className="body-bg-2">

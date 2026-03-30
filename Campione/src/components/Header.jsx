@@ -23,7 +23,7 @@ export default function Header() {
                       <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                           <div className="offcanvas__logo">
                               <Link href="/">
-                                  <img src="/logos/logo%20campione%20dark%20carre.png" alt="logo-img" />
+                                  <img src="/logos/logo campione dark carre.png" alt="logo-img" />
                               </Link>
                           </div>
                           <div className="offcanvas__close">
@@ -61,7 +61,7 @@ export default function Header() {
                   <div className="header-main">
                       <div className="logo">
                           <Link href="/" className="header-logo">
-                              <img src="/logos/logo%20campione%20plat%20light.png" alt="logo-img" />
+                              <img src="/logos/logo campione plat light.png" alt="logo-img" />
                           </Link>
                       </div>
                       <div className="mean__menu-wrapper">
@@ -69,12 +69,16 @@ export default function Header() {
                               <nav id="mobile-menu">
                                   <ul>
                                       <li>
-                                          <Link href="/">
-                                              Accueil 
-                                          </Link>
+                                          <Link href="/">Accueil</Link>
                                       </li>
                                       <li>
                                           <Link href="/about">À propos</Link>
+                                      </li>
+                                      <li>
+                                          <Link href="/pricing">Tarifs</Link>
+                                      </li>
+                                      <li>
+                                          <Link href="/faq">FAQ</Link>
                                       </li>
                                       <li>
                                           <Link href="/contact">Contact</Link>

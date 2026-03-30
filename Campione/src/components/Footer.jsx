@@ -85,13 +85,13 @@ export default function Footer() {
                               </div>
                               <ul className="gt-list-area">
                                   <li>
-                                      <Link href="#">Fonctionnalités</Link>
+                                      <Link href="/#features">Fonctionnalités</Link>
                                   </li>
                                   <li>
-                                      <Link href="#">Avantages</Link>
+                                      <Link href="/#benefits">Avantages</Link>
                                   </li>
                                   <li>
-                                      <Link href="#">Tarifs</Link>
+                                      <Link href="/pricing">Tarifs</Link>
                                   </li>
                               </ul>
                           </div>
@@ -103,13 +103,13 @@ export default function Footer() {
                               </div>
                                <ul className="gt-list-area">
                                   <li>
-                                      <Link href="#">Aide</Link>
+                                      <Link href="/faq">Aide & FAQ</Link>
                                   </li>
                                   <li>
-                                      <Link href="#">FAQ</Link>
+                                      <Link href="/faq">FAQ</Link>
                                   </li>
                                   <li>
-                                      <Link href="#">Tutoriels</Link>
+                                      <Link href="/contact">Tutoriels</Link>
                                   </li>
                               </ul>
                           </div>
@@ -118,7 +118,7 @@ export default function Footer() {
               </div>
               <div className="gt-footer-bottom-3">
                   <Link href="/" className="footer-logo">
-                      <img src="/logos/logo%20campione%20dark%20carre.png" alt="img" style={{maxHeight: '40px'}} />
+                      <img src="/logos/logo campione dark carre.png" alt="img" style={{maxHeight: '40px'}} />
                   </Link>
                   <p>Copyright 2026 Campione. Tous droits réservés.</p>
                   <div className="gt-social-icon d-flex align-items-center style-home-3">
