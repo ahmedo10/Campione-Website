@@ -1,3 +1,5 @@
+import Reveal from '@/components/Reveal';
+
 const stats = [
   { value: '500+',    label: 'Complexes partenaires', icon: 'fa-solid fa-building',     color: '#00D4FF' },
   { value: '25 000+', label: 'Joueurs actifs',         icon: 'fa-solid fa-users',        color: '#FF3366' },
@@ -11,13 +13,15 @@ export default function Stats() {
       <div className="container">
         <div className="grid-4">
           {stats.map((s, i) => (
-            <div key={i} style={{textAlign:'center',padding:'24px 16px'}}>
-              <div style={{width:'52px',height:'52px',borderRadius:'14px',background:`${s.color}15`,border:`1px solid ${s.color}30`,display:'flex',alignItems:'center',justifyContent:'center',margin:'0 auto 16px'}}>
-                <i className={s.icon} style={{color:s.color,fontSize:'20px'}} />
+            <Reveal key={i} type="up" delay={i + 1}>
+              <div style={{textAlign:'center',padding:'24px 16px'}} className="hover-lift">
+                <div style={{width:'52px',height:'52px',borderRadius:'14px',background:`${s.color}15`,border:`1px solid ${s.color}30`,display:'flex',alignItems:'center',justifyContent:'center',margin:'0 auto 16px',transition:'transform 0.3s'}}>
+                  <i className={s.icon} style={{color:s.color,fontSize:'20px'}} />
+                </div>
+                <p style={{fontSize:'clamp(2rem,4vw,2.75rem)',fontWeight:900,color:'#F0F2F8',letterSpacing:'-0.03em',lineHeight:1}}>{s.value}</p>
+                <p style={{fontSize:'14px',color:'#8892A4',marginTop:'8px',fontWeight:500}}>{s.label}</p>
               </div>
-              <p style={{fontSize:'clamp(2rem,4vw,2.75rem)',fontWeight:900,color:'#F0F2F8',letterSpacing:'-0.03em',lineHeight:1}}>{s.value}</p>
-              <p style={{fontSize:'14px',color:'#8892A4',marginTop:'8px',fontWeight:500}}>{s.label}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

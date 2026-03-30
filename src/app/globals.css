@@ -171,3 +171,193 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: color 0.2s;
 }
 .footer-link:hover { color: var(--text); }
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes pulseRing {
+  0%   { transform: scale(1);   opacity: 0.5; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Reveal classes — set by JS */
+.reveal        { opacity: 0; }
+.reveal.visible { animation: fadeUp   0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
+.reveal-left   { opacity: 0; }
+.reveal-left.visible  { animation: fadeLeft  0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
+.reveal-right  { opacity: 0; }
+.reveal-right.visible { animation: fadeRight 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
+.reveal-scale  { opacity: 0; }
+.reveal-scale.visible { animation: scaleIn  0.6s cubic-bezier(0.22,1,0.36,1) forwards; }
+
+/* Stagger delays */
+.d1 { animation-delay: 0.05s !important; }
+.d2 { animation-delay: 0.15s !important; }
+.d3 { animation-delay: 0.25s !important; }
+.d4 { animation-delay: 0.35s !important; }
+.d5 { animation-delay: 0.45s !important; }
+.d6 { animation-delay: 0.55s !important; }
+.d7 { animation-delay: 0.65s !important; }
+.d8 { animation-delay: 0.75s !important; }
+
+/* Continuous */
+.float      { animation: floatY 4s ease-in-out infinite; }
+.float-slow { animation: floatY 6s ease-in-out infinite; }
+
+/* Shimmer gradient text */
+.shimmer-text {
+  background: linear-gradient(90deg, #00D4FF 0%, #FF3366 40%, #00D4FF 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Animated gradient border */
+.grad-border {
+  background: linear-gradient(135deg, #00D4FF, #FF3366, #00E096, #00D4FF);
+  background-size: 300% 300%;
+  animation: gradientShift 4s ease infinite;
+}
+
+/* Hover lift */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
+}
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.4);
+}
+
+/* ── Floating & Illustration Animations ── */
+@keyframes orbitX {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  25%       { transform: translateX(12px) translateY(-8px); }
+  50%       { transform: translateX(0) translateY(-16px); }
+  75%       { transform: translateX(-12px) translateY(-8px); }
+}
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes spinReverse {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+@keyframes slideInCard {
+  from { opacity: 0; transform: translateX(60px) scale(0.9); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+@keyframes popIn {
+  0%   { opacity: 0; transform: scale(0.5) translateY(20px); }
+  70%  { transform: scale(1.08) translateY(-4px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes dash {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes ripple {
+  0%   { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+@keyframes typewriter {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+@keyframes barGrow {
+  from { width: 0%; }
+  to   { width: var(--bar-w); }
+}
+@keyframes numberTick {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(0,212,255,0.2); }
+  50%       { box-shadow: 0 0 48px rgba(0,212,255,0.5), 0 0 80px rgba(0,212,255,0.15); }
+}
+@keyframes borderRotate {
+  from { --angle: 0deg; }
+  to   { --angle: 360deg; }
+}
+@keyframes particleDrift {
+  0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0.6; }
+  50%  { transform: translateY(-30px) translateX(15px) scale(1.2); opacity: 1; }
+  100% { transform: translateY(-60px) translateX(-10px) scale(0.8); opacity: 0; }
+}
+
+/* Utility classes */
+.spin-slow    { animation: spinSlow    12s linear infinite; }
+.spin-reverse { animation: spinReverse 18s linear infinite; }
+.orbit        { animation: orbitX 5s ease-in-out infinite; }
+.blink        { animation: blink 2s ease-in-out infinite; }
+.glow-pulse   { animation: glowPulse 3s ease-in-out infinite; }
+.pop-in       { animation: popIn 0.6s cubic-bezier(0.22,1,0.36,1) forwards; }
+
+/* Floating card with entrance */
+.float-card {
+  animation: slideInCard 0.8s cubic-bezier(0.22,1,0.36,1) forwards, floatY 4s ease-in-out 0.8s infinite;
+}
+.float-card-slow {
+  animation: slideInCard 0.8s cubic-bezier(0.22,1,0.36,1) 0.3s forwards, floatY 6s ease-in-out 1.1s infinite;
+}
+
+/* Ripple effect */
+.ripple-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(0,212,255,0.4);
+  animation: ripple 2.5s ease-out infinite;
+}
+.ripple-ring:nth-child(2) { animation-delay: 0.8s; }
+.ripple-ring:nth-child(3) { animation-delay: 1.6s; }
+
+/* Particle dot */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particleDrift linear infinite;
+}
+
+/* Animated bar */
+.anim-bar {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #00D4FF, #FF3366);
+  width: 0%;
+  transition: width 1.2s cubic-bezier(0.22,1,0.36,1);
+}
+.anim-bar.active { width: var(--bar-w, 80%); }
