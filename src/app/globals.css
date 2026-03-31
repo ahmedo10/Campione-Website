@@ -361,3 +361,80 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: width 1.2s cubic-bezier(0.22,1,0.36,1);
 }
 .anim-bar.active { width: var(--bar-w, 80%); }
+
+/* ── Responsive layout helpers ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.two-col-start {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.three-col-pricing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  align-items: start;
+}
+.dash-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Hide floating cards on small screens */
+.float-card,
+.float-card-slow,
+.orbit {
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  .two-col        { grid-template-columns: 1fr; gap: 48px; }
+  .two-col-start  { grid-template-columns: 1fr; gap: 40px; }
+  .dash-split     { grid-template-columns: 1fr; gap: 40px; }
+  .footer-grid    { grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+  .faq-grid       { grid-template-columns: 1fr; gap: 40px; }
+  .three-col-pricing { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+}
+
+@media (max-width: 768px) {
+  .float-card,
+  .float-card-slow,
+  .orbit { display: none !important; }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .three-col-pricing { max-width: 100%; }
+
+  .section { padding: 64px 0; }
+
+  .section-title { font-size: clamp(1.75rem, 6vw, 2.25rem); }
+  .section-sub   { font-size: 15px; }
+
+  .btn-primary,
+  .btn-ghost { padding: 12px 24px; font-size: 14px; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .card { padding: 24px; }
+  .section { padding: 56px 0; }
+}

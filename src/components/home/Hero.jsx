@@ -45,7 +45,7 @@ export default function Hero() {
       <div className="spin-reverse" style={{position:'absolute',top:'15%',right:'8%',width:'80px',height:'80px',borderRadius:'50%',border:'1px dashed rgba(255,51,102,0.15)',margin:'20px',pointerEvents:'none'}} />
 
       <div className="container" style={{position:'relative',zIndex:1,padding:'80px 24px'}}>
-        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'64px',alignItems:'center'}}>
+        <div className="two-col">
 
           {/* ── Left content ── */}
           <div>

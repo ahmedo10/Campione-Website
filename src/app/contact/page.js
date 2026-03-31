@@ -37,7 +37,7 @@ export default function Contact() {
 
       <section className="section" style={{background:'#080C1A'}}>
         <div className="container">
-          <div style={{display:'grid',gridTemplateColumns:'1fr 1.4fr',gap:'64px',alignItems:'start'}}>
+          <div className="two-col">
 
             {/* Info */}
             <div>
@@ -87,7 +87,7 @@ export default function Contact() {
             <div className="card">
               <h2 style={{fontSize:'22px',fontWeight:800,color:'#F0F2F8',marginBottom:'28px'}}>Envoyez-nous un message</h2>
               <form style={{display:'flex',flexDirection:'column',gap:'16px'}}>
-                <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'16px'}}>
+                <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))',gap:'16px'}}>
                   {['Votre nom','Votre email'].map((ph,i) => (
                     <input key={i} type={i===1?'email':'text'} placeholder={ph}
                            style={{padding:'13px 16px',borderRadius:'12px',background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.1)',color:'#F0F2F8',fontSize:'14px',outline:'none',fontFamily:'inherit'}} />

@@ -48,7 +48,7 @@ export default function HowItWorks() {
 
         {/* App preview banner */}
         <Reveal type="up">
-          <div style={{borderRadius:'24px',background:'linear-gradient(135deg,#0E1428,#141B35)',border:'1px solid rgba(255,255,255,0.08)',padding:'48px',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'48px',alignItems:'center',overflow:'hidden',position:'relative'}}>
+          <div className="two-col" style={{borderRadius:'24px',background:'linear-gradient(135deg,#0E1428,#141B35)',border:'1px solid rgba(255,255,255,0.08)',padding:'48px',overflow:'hidden',position:'relative'}}>
             <div style={{position:'absolute',top:0,left:0,width:'300px',height:'300px',borderRadius:'50%',background:'radial-gradient(circle,rgba(255,51,102,0.07),transparent 70%)',pointerEvents:'none'}} />
 
             {/* Left text */}

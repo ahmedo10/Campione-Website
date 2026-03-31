@@ -17,9 +17,9 @@ export default function FAQ() {
   return (
     <section className="section" style={{background:'#080C1A'}}>
       <div className="container">
-        <div style={{display:'grid',gridTemplateColumns:'1fr 1.4fr',gap:'80px',alignItems:'start'}}>
+        <div className="faq-grid">
 
-          {/* Left */}
+          {/* Left sticky */}
           <div style={{position:'sticky',top:'100px'}}>
             <div className="section-label" style={{background:'rgba(236,72,153,0.1)',border:'1px solid rgba(236,72,153,0.25)',color:'#F472B6',marginBottom:'20px'}}>
               FAQ
@@ -61,7 +61,10 @@ export default function FAQ() {
           </div>
         </div>
       </div>
-      <style>{`@media(max-width:900px){.faq-grid{grid-template-columns:1fr !important;}}`}</style>
+      <style>{`
+        @media(max-width:1024px){ .faq-grid { grid-template-columns: 1fr !important; } }
+        @media(max-width:1024px){ .faq-grid > div:first-child { position: static !important; } }
+      `}</style>
     </section>
   );
 }

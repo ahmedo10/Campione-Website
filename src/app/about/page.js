@@ -51,7 +51,7 @@ export default function About() {
       {/* Mission */}
       <section className="section" style={{background:'#080C1A'}}>
         <div className="container">
-          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'64px',alignItems:'center'}}>
+          <div className="two-col">
             <div>
               <div className="section-label" style={{background:'rgba(0,212,255,0.1)',border:'1px solid rgba(0,212,255,0.25)',color:'#00D4FF',marginBottom:'20px'}}>
                 Notre mission
@@ -88,7 +88,7 @@ export default function About() {
       {/* Stats */}
       <section className="section" style={{background:'#0E1428'}}>
         <div className="container">
-          <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'2px',borderRadius:'20px',overflow:'hidden',border:'1px solid rgba(255,255,255,0.08)'}}>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:'2px',borderRadius:'20px',overflow:'hidden',border:'1px solid rgba(255,255,255,0.08)'}}>
             {[
               {v:'2022',  l:'Année de création'},
               {v:'Tunisie',l:'Notre marché'},

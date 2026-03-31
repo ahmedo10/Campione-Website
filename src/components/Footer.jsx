@@ -20,7 +20,7 @@ export default function Footer() {
 
       {/* Main grid */}
       <div className="container" style={{padding:'72px 24px 48px'}}>
-        <div style={{display:'grid',gridTemplateColumns:'1.6fr 1fr 1fr 1fr 1fr',gap:'48px'}}>
+        <div className="footer-grid">
 
           {/* Brand */}
           <div>
@@ -85,12 +85,9 @@ export default function Footer() {
       </div>
 
       <style>{`
-        @media(max-width:1024px){
-          footer .container>div:first-child{grid-template-columns:1fr 1fr 1fr !important;}
-        }
-        @media(max-width:640px){
-          footer .container>div:first-child{grid-template-columns:1fr 1fr !important;}
-        }
+        @media(max-width:1024px){ .footer-grid { grid-template-columns: 1fr 1fr 1fr !important; } }
+        @media(max-width:640px){  .footer-grid { grid-template-columns: 1fr 1fr !important; } }
+        @media(max-width:480px){  .footer-grid { grid-template-columns: 1fr !important; } }
       `}</style>
     </footer>
   );

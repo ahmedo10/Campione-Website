@@ -47,7 +47,7 @@ export default function Pricing() {
           <p className="section-sub" style={{margin:'0 auto'}}>Gratuit pour les joueurs. Abordable pour les clubs. Sans engagement.</p>
         </Reveal>
 
-        <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'24px',alignItems:'start',marginBottom:'64px'}}>
+        <div className="three-col-pricing" style={{marginBottom:'64px'}}>
           {plans.map((p,i)=>(
             <Reveal key={i} type="up" delay={i+1}>
               <div className="hover-lift" style={{
@@ -136,7 +136,7 @@ export default function Pricing() {
         </p>
       </div>
 
-      <style>{`@media(max-width:900px){#pricing .container>div:nth-child(2){grid-template-columns:1fr !important;}}`}</style>
+      <style>{`@media(max-width:900px){.three-col-pricing{grid-template-columns:1fr !important;}}`}</style>
     </section>
   );
 }

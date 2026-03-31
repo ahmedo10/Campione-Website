@@ -20,7 +20,7 @@ export default function CTA() {
           <div style={{
             position:'relative',
             borderRadius:'28px',
-            padding:'80px 48px',
+            padding:'clamp(40px, 6vw, 80px) clamp(24px, 5vw, 48px)',
             textAlign:'center',
             overflow:'hidden',
             background:'linear-gradient(135deg,rgba(0,212,255,0.1) 0%,rgba(255,51,102,0.08) 100%)',

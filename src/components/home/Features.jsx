@@ -46,7 +46,7 @@ export default function Features() {
         </div>
 
         {/* Dashboard split */}
-        <div style={{marginTop:'80px',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'48px',alignItems:'center',background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:'24px',padding:'48px',overflow:'hidden',position:'relative'}}>
+        <div className="dash-split" style={{marginTop:'80px',background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:'24px',padding:'48px',overflow:'hidden',position:'relative'}}>
           <div style={{position:'absolute',top:0,right:0,width:'300px',height:'300px',borderRadius:'50%',background:'radial-gradient(circle,rgba(0,212,255,0.07),transparent 70%)',pointerEvents:'none'}} />
 
           {/* Mock dashboard */}

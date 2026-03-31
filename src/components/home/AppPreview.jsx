@@ -31,7 +31,7 @@ export default function AppPreview() {
       ))}
 
       <div className="container" style={{position:'relative',zIndex:1}}>
-        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'64px',alignItems:'center'}}>
+        <div className="two-col">
 
           {/* LEFT: 3 stacked phone mockups */}
           <Reveal type="left">
